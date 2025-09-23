@@ -37,10 +37,10 @@ import { services } from "@/constants";
 
 /**
  * ContactForm Component
- * 
+ *
  * A responsive contact form component with form validation using React Hook Form + Zod.
  * Features glass morphism design with responsive layout for all screen sizes.
- * 
+ *
  */
 export function ContactForm() {
   // Initialize react-hook-form with Zod validation schema
@@ -83,8 +83,10 @@ export function ContactForm() {
       <CardContent className="px-4 sm:px-6">
         {/* React Hook Form wrapper */}
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
-            
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-4 sm:space-y-6"
+          >
             {/* First & Last Name Fields */}
             {/* On mobile: stacked vertically, on tablet+: side by side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -93,7 +95,9 @@ export function ContactForm() {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium">First Name</FormLabel>
+                    <FormLabel className="text-sm font-medium">
+                      First Name
+                    </FormLabel>
                     <FormControl>
                       <Input
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
@@ -110,7 +114,9 @@ export function ContactForm() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium">Last Name</FormLabel>
+                    <FormLabel className="text-sm font-medium">
+                      Last Name
+                    </FormLabel>
                     <FormControl>
                       <Input
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
@@ -154,7 +160,6 @@ export function ContactForm() {
                     <FormControl>
                       <Input
                         type="tel"
-                        placeholder="+1 (555) 123-4567"
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         {...field}
                       />
@@ -171,7 +176,9 @@ export function ContactForm() {
               name="service"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Service Interest</FormLabel>
+                  <FormLabel className="text-sm font-medium">
+                    Service Interest
+                  </FormLabel>
                   <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
                       <SelectTrigger className="w-full h-10 sm:h-11 border border-gray-200 text-black rounded-md focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base">
@@ -224,7 +231,7 @@ export function ContactForm() {
               type="submit"
               className="w-full h-11 sm:h-12 py-2 sm:py-3 bg-gradient-to-r from-[#34156e] to-[#340cac] text-white hover:from-[#2a1158] hover:to-[#2a0a8a] transition-all duration-200 text-sm sm:text-base font-medium flex items-center justify-center gap-2"
             >
-              Send Message 
+              Send Message
               <IoIosSend size={16} className="sm:w-5 sm:h-5" />
             </Button>
           </form>

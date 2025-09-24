@@ -13,7 +13,7 @@ export default function ServicesSection() {
         <p className="text-white text-center">Comprehensive technology solutions for your business needs</p>
         <div className="serviceSectionMain flex max-sm:flex-col justify-around mt-8 px-4 w-full lg:w-[90%] space-x-6 mx-auto">
           <div className="serviceCard md:mt-4 max-sm:mb-4 w-full md:w-1/3">
-            <Card className="min-w-full h-[400px] bg-[#112A3C] gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
+            <Card className="min-w-full h-[400px] bg-[#112A3C] pb-0 gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
               <CardHeader className="text-white max-sm:text-sm pt-1 md:pt-4 px-6">
                 Technology
               </CardHeader>
@@ -24,13 +24,13 @@ export default function ServicesSection() {
                 Streamline operations with custom enterprise resource planning solutions.
               </CardDescription>
               <p className="text-black pe-2 px-6 flex">Learn <span className="text-white"><MdKeyboardArrowRight size={25} /></span></p>
-                <div className="flex-grow flex items-end">
-                  <Image src="/images/services/erp.jpg" alt="ERP Image" width={300} height={150} className="rounded-b-xl w-full object-cover h-[220px] md:h-[200px]" />
+                <div className="flex-grow flex items-end p-0 overflow-hidden">
+                  <Image src="/images/services/erp.jpg" alt="ERP Image" width={300} height={150} className="rounded-b-xl w-full object-cover h-full" />
                 </div>
             </Card>
           </div>
           <div className="serviceCard md:mt-[14px] mt-6 max-sm:mb-4 w-full md:w-1/3">
-            <Card className="min-w-full h-[400px] md:h-[420px] bg-[#112A3C] gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
+            <Card className="min-w-full h-[400px] md:h-[420px] bg-[#112A3C] pb-0 gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
               <CardHeader className="text-white pt-4 px-6">
                 Development
               </CardHeader>
@@ -41,13 +41,13 @@ export default function ServicesSection() {
                 Create powerful digital platforms tailored to your unique business requirements
               </CardDescription>
               <p className="text-black pe-2 px-6 flex">Explore <span className="text-white"><MdKeyboardArrowRight size={25} /></span></p>
-                <div className="flex-grow flex items-end">
-                  <Image src={"/images/services/web.jpg"} alt="Web Image" width={300} height={150} className="rounded-b-xl w-full object-cover h-[205px] md:h-[175px] lg:h-[188px]" />
+                <div className="flex-grow flex items-end p-0 overflow-hidden">
+                  <Image src={"/images/services/web.jpg"} alt="Web Image" width={300} height={150} className="rounded-b-xl w-full object-cover h-full" />
                 </div>
             </Card>
           </div>
           <div className="serviceCard md:mt-4 mt-6 max-sm:mb-4 w-full md:w-1/3">
-            <Card className="min-w-full h-[400px] bg-[#112A3C] gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
+            <Card className="min-w-full h-[400px] bg-[#112A3C] pb-0 gap-2 flex flex-col border border-white hover:scale-105 duration-300 transition-all">
               <CardHeader className="text-white pt-4 px-6">
                 Design
               </CardHeader>
@@ -58,8 +58,8 @@ export default function ServicesSection() {
                 Craft intuitive and engaging digital experiences that delight users.
               </CardDescription>
               <p className="text-black pe-2 px-6 flex">Discover <span className="text-white"><MdKeyboardArrowRight size={25} /></span></p>
-                <div className="flex-grow flex items-end">
-                  <Image src={"/images/services/uiux.jpg"} alt="UI/UX Image" width={300} height={150} style={{objectFit: 'cover', width: '100%', height: '200px'}} className="rounded-b-xl" />
+                <div className="flex-grow flex items-end p-0 overflow-hidden">
+                  <Image src={"/images/services/uiux.jpg"} alt="UI/UX Image" width={300} height={150} className="rounded-b-xl w-full object-cover h-full" />
                 </div>
             </Card>
           </div>

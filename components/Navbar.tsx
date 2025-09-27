@@ -47,25 +47,25 @@ export default function Navbar() {
           <div className="flex items-center gap-4 xl:gap-6 text-black/70">
             <Link
               href="#home"
-              className="text-sm xl:text-base hover:text-[#00F5D4] transition-colors duration-300"
+              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
             >
               Home
             </Link>
             <Link
               href="#about"
-              className="text-sm xl:text-base hover:text-[#00F5D4] transition-colors duration-300"
+              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
             >
               About
             </Link>
             <Link
               href="#services"
-              className="text-sm xl:text-base hover:text-[#00F5D4] transition-colors duration-300"
+              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
             >
               Services
             </Link>
             <Link
               href="#team"
-              className="text-sm xl:text-base hover:text-[#00F5D4] transition-colors duration-300"
+              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
             >
               Team
             </Link>

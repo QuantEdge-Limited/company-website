@@ -1,10 +1,11 @@
+"use client";
+
 import CTASection from "@/components/CTASection";
 import AboutSection from "@/components/Home features/AboutSection";
 import HeroSection from "@/components/Home features/HeroSection";
 import ServicesSection from "@/components/Home features/ServicesSection";
 import TeamSection from "@/components/Home features/TeamSection";
 import TestimonialSection from "@/components/Home features/TestimonialSection";
-import Image from "next/image";
 
 export default function Home() {
   return (

@@ -34,6 +34,8 @@ import {
   SelectValue,
 } from "./ui/select";
 import { services } from "@/constants";
+import { useTransition } from "react";
+import { sendContactEmail } from "@/actions/email"; // Import the server action
 
 /**
  * ContactForm Component
@@ -56,16 +58,26 @@ export function ContactForm() {
     },
   });
 
+  const [isPending, startTransition] = useTransition();
+
   /**
    * Form submission handler
    * Processes form data, resets form, and shows success notification
    * @param values - Form data validated by Zod schema
    */
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    form.reset();
-    toast.success("Email sent successfully!", {
-      description: `Sent on ${getFormattedDateTime()}`,
+    startTransition(async () => {
+      try {
+        await sendContactEmail(values);
+        form.reset();
+        toast.success("Email sent successfully!", {
+          description: `Sent on ${getFormattedDateTime()}`,
+        });
+      } catch (error: any) {
+        toast.error("Failed to send email", {
+          description: error?.message || "Something went wrong.",
+        });
+      }
     });
   }
 
@@ -103,6 +115,7 @@ export function ContactForm() {
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         placeholder="Enter your first name"
                         {...field}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage className="text-red-400 text-xs" />
@@ -122,6 +135,7 @@ export function ContactForm() {
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         placeholder="Enter your last name"
                         {...field}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage className="text-red-400 text-xs" />
@@ -145,6 +159,7 @@ export function ContactForm() {
                         placeholder="john@company.com"
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         {...field}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage className="text-red-400 text-xs" />
@@ -162,6 +177,7 @@ export function ContactForm() {
                         type="tel"
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         {...field}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage className="text-red-400 text-xs" />
@@ -179,7 +195,11 @@ export function ContactForm() {
                   <FormLabel className="text-sm font-medium">
                     Service Interest
                   </FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    disabled={isPending}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full h-10 sm:h-11 border border-gray-200 text-black rounded-md focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base">
                         <SelectValue placeholder="Select a service" />
@@ -218,6 +238,7 @@ export function ContactForm() {
                       placeholder="Tell us about your project, goals, and any specific requirements..."
                       className="min-h-[100px] sm:min-h-[120px] resize-none border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                       {...field}
+                      disabled={isPending}
                     />
                   </FormControl>
                   <FormMessage className="text-red-400 text-xs" />
@@ -230,9 +251,38 @@ export function ContactForm() {
             <Button
               type="submit"
               className="w-full h-11 sm:h-12 py-2 sm:py-3 bg-gradient-to-r from-[#34156e] to-[#340cac] text-white hover:from-[#2a1158] hover:to-[#2a0a8a] transition-all duration-200 text-sm sm:text-base font-medium flex items-center justify-center gap-2"
+              disabled={isPending}
             >
-              Send Message
-              <IoIosSend size={16} className="sm:w-5 sm:h-5" />
+              {isPending ? (
+                <>
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8z"
+                    ></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <IoIosSend size={16} className="sm:w-5 sm:h-5" />
+                </>
+              )}
             </Button>
           </form>
         </Form>

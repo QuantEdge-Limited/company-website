@@ -92,76 +92,76 @@ export const testimonials = [
 
 export const teamMembers = [
   {
-    name: "Achieng Otieno",
+    name: "Samuel Mungai",
     title: "Founder & CEO",
     social: {
-      twitter: "https://twitter.com/achiengotieno",
-      linkedin: "https://linkedin.com/in/achiengotieno",
-      github: "https://github.com/achiengotieno",
+      twitter: "https://twitter.com/fintechsam_254",
+      linkedin: "https://linkedin.com/in/samuel",
+      github: "https://github.com/samuelnmu",
     },
-    image: "/images/team/achieng.jpg",
+    image: "/images/team/",
     description:
-      "Achieng is the visionary leader driving the company’s mission to build impactful digital solutions for Africa.",
+      "Samuel is the visionary leader driving the company’s mission to build impactful digital solutions for Africa.",
   },
   {
-    name: "Brian Mwangi",
-    title: "Lead Software Engineer",
+    name: "Peter Karanja",
+    title: "Lead  Frontend Eng",
     social: {
-      twitter: "https://twitter.com/brianmwangi",
-      linkedin: "https://linkedin.com/in/brianmwangi",
-      github: "https://github.com/brianmwangi",
+      twitter: "https://twitter.com/",
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/",
     },
-    image: "/images/team/brian.jpg",
+    image: "/images/team/",
     description:
-      "Brian is passionate about building scalable web applications and mentoring young developers in the tech community.",
+      "Peter is passionate about building scalable web applications and mentoring young developers in the tech community.",
   },
   {
-    name: "Faith Wambui",
-    title: "UI/UX Designer",
+    name: "Austine Oganga ",
+    title: "Lead Backend Eng",
     social: {
-      twitter: "https://twitter.com/faithwambui",
-      linkedin: "https://linkedin.com/in/faithwambui",
-      dribbble: "https://dribbble.com/faithwambui",
+      twitter: "https://twitter.com/",
+      linkedin: "https://linkedin.com/in/",
+      dribbble: "https://dribbble.com/",
     },
-    image: "/images/team/faith.jpg",
+    image: "/images/team/",
     description:
-      "Faith designs user-friendly interfaces and focuses on creating inclusive digital experiences for diverse audiences.",
+      "Austine is a passionate Backend Eng, with the passion to build scallable systems ",
   },
   {
-    name: "Daniel Kiptoo",
+    name: "CMO",
     title: "Marketing & Partnerships Manager",
     social: {
-      twitter: "https://twitter.com/danielkiptoo",
-      linkedin: "https://linkedin.com/in/danielkiptoo",
-      instagram: "https://instagram.com/danielkiptoo",
+      twitter: "https://twitter.com/",
+      linkedin: "https://linkedin.com/in/",
+      instagram: "https://instagram.com/",
     },
-    image: "/images/team/daniel.jpg",
+    image: "/images/team/",
     description:
-      "Daniel builds strategic partnerships and drives brand growth with innovative marketing campaigns across East Africa.",
+      " builds strategic partnerships and drives brand growth with innovative marketing campaigns across East Africa.",
   },
   {
-    name: "Mercy Njeri",
+    name: "PM",
     title: "Product Manager",
     social: {
-      twitter: "https://twitter.com/mercynjeri",
-      linkedin: "https://linkedin.com/in/mercynjeri",
-      github: "https://github.com/mercynjeri",
+      twitter: "https://twitter.com/",
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/",
     },
-    image: "/images/team/mercy.jpg",
+    image: "/images/team/",
     description:
-      "Mercy ensures the team delivers high-impact products by aligning customer needs with business goals.",
+      "ensures the team delivers high-impact products by aligning customer needs with business goals.",
   },
   {
-    name: "Kevin Ouma",
+    name: "DevOps",
     title: "DevOps Engineer",
     social: {
-      twitter: "https://twitter.com/kevinouma",
-      linkedin: "https://linkedin.com/in/kevinouma",
-      github: "https://github.com/kevinouma",
+      twitter: "https://twitter.com/",
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/",
     },
-    image: "/images/team/kevin.jpg",
+    image: "/images/team/",
     description:
-      "Kevin manages cloud infrastructure and automation pipelines, ensuring reliability and scalability for all deployments.",
+      "DevOps manages cloud infrastructure and automation pipelines, ensuring reliability and scalability for all deployments.",
   },
 ];
 

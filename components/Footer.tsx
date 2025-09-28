@@ -198,7 +198,7 @@ export default function Footer() {
                     className="text-[#00F5D4] sm:text-[18px]"
                   />
                   <span className="text-xs sm:text-sm text-white/80">
-                    +254 700 000000
+                    +254 720 042 710
                   </span>
                 </div>
 

@@ -1,25 +1,25 @@
 import Image from "next/image";
 import React from "react";
-import { Carousel, CarouselContent } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { FaChevronRight } from "react-icons/fa6";
 import { Button } from "../ui/button";
-import { Card } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { processCards } from "@/constants";
 
 export default function AboutSection() {
-  // Autoplay plugin configuration for carousel
-  // Delays 8 seconds between transitions and stops when user interacts
   const plugin = React.useRef(
     Autoplay({ delay: 8000, stopOnInteraction: true })
   );
+  
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
-      {/* 
-        ABOUT SECTION - Hero area with carousel showcasing company mission
-        Dark theme with gradient backgrounds and glassmorphism effects
-      */}
+      {/* ABOUT SECTION */}
       <section
         id="about"
         className="bg-[#0D1B2A] 
@@ -27,9 +27,7 @@ export default function AboutSection() {
                    py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 
                    flex flex-col justify-center min-h-screen"
       >
-        {/* Header Section - Responsive text sizing and spacing */}
         <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          {/* Innovation Badge - Glassmorphism effect with gradient text */}
           <div
             className="inline-block 
                        px-2 sm:px-3 md:px-4 lg:px-5
@@ -48,7 +46,6 @@ export default function AboutSection() {
             </span>
           </div>
 
-          {/* Main Heading - Responsive typography scaling */}
           <div className="text-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
             <h1
               className="text-white 
@@ -59,7 +56,6 @@ export default function AboutSection() {
             </h1>
           </div>
 
-          {/* Subheading - Responsive text and spacing */}
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
             <p
               className="text-gray-400 
@@ -73,7 +69,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Main Content Card - Carousel with responsive sizing */}
         <div className="max-w-7xl mx-auto w-full px-2 sm:px-0">
           <Carousel
             className="w-full"
@@ -82,111 +77,101 @@ export default function AboutSection() {
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
-              {/* Glassmorphism Card Container */}
-              <div
-                className="bg-gradient-to-r from-transparent via-white/5 to-transparent 
+              <CarouselItem>
+                <div
+                  className="bg-gradient-to-r from-transparent via-white/5 to-transparent 
                             rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2rem] 
                             border border-white/10 overflow-hidden backdrop-blur-sm"
-              >
-                {/* Two Column Layout - Responsive grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image Section - Responsive height scaling */}
-                  <div
-                    className="relative 
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <div
+                      className="relative 
                                 h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] 2xl:h-[650px]
                                 order-2 lg:order-1"
-                  >
-                    <div
-                      className="absolute inset-0 
+                    >
+                      <div
+                        className="absolute inset-0 
                                   rounded-t-xl sm:rounded-t-2xl md:rounded-t-3xl lg:rounded-l-[2rem] lg:rounded-tr-none
                                   overflow-hidden"
-                    >
-                      <Image
-                        src="/about-image.jpg"
-                        alt="About QuantEdge - Team collaboration and innovation"
-                        fill
-                        className="object-cover transition-transform duration-700 hover:scale-105"
-                        priority
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                      />
+                      >
+                        <Image
+                          src="/about-image.jpg"
+                          alt="About QuantEdge - Team collaboration and innovation"
+                          fill
+                          className="object-cover transition-transform duration-700 hover:scale-105"
+                          priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content Section - Responsive padding and typography */}
-                  <div
-                    className="bg-[#0a1426] 
+                    <div
+                      className="bg-[#0a1426] 
                                p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16
                                flex flex-col justify-center
                                rounded-b-xl sm:rounded-b-2xl md:rounded-b-3xl lg:rounded-r-[2rem] lg:rounded-bl-none
                                order-1 lg:order-2"
-                  >
-                    {/* Digital Badge */}
-                    <div className="mb-4 sm:mb-5 md:mb-6">
-                      <span
-                        className="text-[#4a9eff] 
+                    >
+                      <div className="mb-4 sm:mb-5 md:mb-6">
+                        <span
+                          className="text-[#4a9eff] 
                                      text-xs sm:text-sm md:text-base
                                      font-medium tracking-wider uppercase"
-                      >
-                        Digital
-                      </span>
-                    </div>
+                        >
+                          Digital
+                        </span>
+                      </div>
 
-                    {/* Mission Heading - Responsive text scaling */}
-                    <h2
-                      className="text-white 
+                      <h2
+                        className="text-white 
                                  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
                                  font-bold 
                                  mb-6 sm:mb-7 md:mb-8 lg:mb-10
                                  leading-tight"
-                    >
-                      Our mission
-                    </h2>
+                      >
+                        Our mission
+                      </h2>
 
-                    {/* Description Text - Responsive sizing and line height */}
-                    <p
-                      className="text-gray-300 
+                      <p
+                        className="text-gray-300 
                                 text-base sm:text-lg md:text-xl lg:text-2xl
                                 leading-relaxed 
                                 mb-6 sm:mb-7 md:mb-8 lg:mb-10
                                 font-light"
-                    >
-                      We empower businesses through cutting-edge technological
-                      solutions and strategic digital innovation.
-                    </p>
+                      >
+                        We empower businesses through cutting-edge technological
+                        solutions and strategic digital innovation.
+                      </p>
 
-                    {/* Call-to-Action Arrow Button */}
-                    <div className="flex">
-                      <Button
-                        className="text-[#4a9eff] hover:text-[#6bb3ff] 
+                      <div className="flex">
+                        <Button
+                          onClick={scrollToContact}
+                          className="text-[#4a9eff] hover:text-[#6bb3ff] 
                                        transition-all duration-300 
                                        p-2 sm:p-3 md:p-4
                                        w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
                                        hover:bg-white/10 rounded-full
                                        border border-transparent hover:border-[#4a9eff]/30"
-                      >
-                        <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
-                      </Button>
+                        >
+                          <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             </CarouselContent>
           </Carousel>
         </div>
       </section>
 
-      {/* 
-        HOW WE WORK SECTION - Process showcase with three-card layout
-        Light theme with gradient backgrounds and card-based design
-      */}
+      {/* HOW WE WORK SECTION - Redesigned Cards */}
       <section
-        className="bg-gradient-to-r from-white via-blue-50/50 to-blue-50 
-                         py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 
-                         px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16"
+        className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50
+                   py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 
+                   px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16"
       >
-        {/* Header Section - Consistent with above section */}
         <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          {/* Process Badge - Matching style with innovation badge */}
           <div
             className="inline-block 
                        px-2 sm:px-3 md:px-4 lg:px-5
@@ -205,10 +190,9 @@ export default function AboutSection() {
             </span>
           </div>
 
-          {/* Main Heading - Responsive dark text */}
           <div className="text-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
             <h1
-              className="text-black 
+              className="text-slate-900
                           text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
                           font-bold leading-tight"
             >
@@ -216,107 +200,75 @@ export default function AboutSection() {
             </h1>
           </div>
 
-          {/* Subheading - Constrained width for readability */}
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
             <p
-              className="text-gray-700 
+              className="text-slate-600
                          text-base sm:text-lg md:text-xl lg:text-2xl
                          font-normal leading-relaxed
                          max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 
                          mx-auto px-4 sm:px-0"
             >
-              Our strategic approach to delivering exceptional technology
-              solutions
+              Our strategic approach to delivering exceptional technology solutions
             </p>
           </div>
         </div>
 
-        {/* Process Cards Container - Responsive grid layout */}
+        {/* Redesigned Process Cards */}
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
-            {processCards.map((card) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {processCards.map((card, index) => (
               <Card
                 key={card.title}
-                className="bg-white 
-                   rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] 
-                   overflow-hidden 
-                   border-1 border-black/50
-                   flex-1 
-                   transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
-                   group"
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-slate-50/50 border-slate-200/60 overflow-hidden"
               >
-                {/* Card Image */}
-                <div className="relative h-32 sm:h-40 md:h-48 lg:h-52 xl:h-56">
+                {/* Image Section - No Number Badge */}
+                <div className="relative h-56 md:h-64 lg:h-72 w-full overflow-hidden">
                   <Image
                     src={card.image}
                     alt={card.alt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
+                  {/* Dark overlay for better contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
 
-                {/* Card Content */}
-                <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-                  {/* Category Label */}
-                  <div className="mb-2 sm:mb-3">
-                    <span
-                      className="text-gray-700 
-                         text-xs sm:text-sm md:text-base
-                         font-medium uppercase tracking-wide"
-                    >
-                      {card.category}
-                    </span>
-                  </div>
-
-                  {/* Card Title */}
-                  <h3
-                    className="text-black 
-                       text-xl sm:text-2xl md:text-3xl lg:text-4xl
-                       font-bold 
-                       mb-3 sm:mb-4 md:mb-5 lg:mb-6
-                       leading-tight"
-                  >
+                {/* Card Header with Category Badge */}
+                <CardHeader>
+                  <span className="inline-block w-fit px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-xs font-bold text-blue-700 uppercase tracking-wider shadow-sm">
+                    {card.category}
+                  </span>
+                  <CardTitle className="text-2xl md:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors mt-3">
                     {card.title}
-                  </h3>
+                  </CardTitle>
+                </CardHeader>
 
-                  {/* Card Description */}
-                  <p
-                    className="text-gray-700 
-                       text-sm sm:text-base md:text-lg
-                       leading-relaxed 
-                       mb-6 sm:mb-7 md:mb-8 lg:mb-10"
-                  >
+                {/* Card Content */}
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed text-slate-600 mb-6">
                     {card.description}
-                  </p>
+                  </CardDescription>
 
                   {/* CTA Button */}
                   <Button
-                    className="flex items-center 
-                       text-black font-medium 
-                       hover:text-gray-700 
-                       transition-all duration-300
-                       text-sm sm:text-base md:text-lg
-                       hover:bg-gray-100 
-                       px-0 py-0 h-auto
-                       group-hover:translate-x-2"
+                    onClick={scrollToContact}
+                    variant="ghost"
+                    className="w-fit px-0 -ml-1 text-blue-600 hover:text-blue-700 hover:bg-transparent font-semibold group/btn"
                   >
                     <span className="mr-2">{card.buttonLabel}</span>
-                    <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                    <FaChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
-                </div>
+                </CardContent>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* 
-          Scroll Indicator - Hidden on mobile, visible on larger screens
-          Animated bounce effect to encourage scrolling
-        */}
+        {/* Scroll Indicator */}
         <div className="hidden lg:block absolute bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 xl:w-6 xl:h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <div className="w-1 h-2.5 xl:w-1 xl:h-3 bg-white/60 rounded-full mt-1.5 xl:mt-2 animate-pulse"></div>
+          <div className="w-5 h-8 xl:w-6 xl:h-10 border-2 border-slate-400 rounded-full flex justify-center">
+            <div className="w-1 h-2.5 xl:w-1 xl:h-3 bg-slate-400 rounded-full mt-1.5 xl:mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>

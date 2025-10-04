@@ -6,33 +6,32 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
-
 export const processCards = [
   {
-    image: "/methodology-image.jpg",
+    image: "/images/services/methodology-image.jpg",
     alt: "Methodology - Person working at desk with strategic planning",
     category: "Methodology",
     title: "Discover",
     description:
-      "Understanding your needs through comprehensive consultation and detailed requirement analysis",
+      "We dive deep to understand your unique needs through comprehensive consultation and detailed analysis.",
     buttonLabel: "Explore",
   },
   {
-    image: "/design-image.jpg",
+    image: "/images/services/design.png",
     alt: "Design - Person working on laptop with creative solutions",
     category: "Design",
-    title: "Crafting tailored solutions",
+    title: "Craft Solutions",
     description:
-      "Developing innovative strategies aligned with your business goals and user experience requirements",
+      "Creating innovative strategies perfectly aligned with your business goals and user experience vision.",
     buttonLabel: "Learn",
   },
   {
-    image: "/implementation-image.jpg",
+    image: "/images/services/Implementation.png",
     alt: "Implementation - Person with tablet managing digital solutions",
     category: "Implementation",
-    title: "Executing and supporting your digital transformation",
+    title: "Execute & Support",
     description:
-      "Seamlessly implementing and providing ongoing support for your technological solutions with 24/7 monitoring",
+      "Seamless implementation with ongoing support and 24/7 monitoring to ensure your success.",
     buttonLabel: "Discover",
   },
 ];
@@ -101,7 +100,7 @@ export const teamMembers = [
     },
     image: "/images/team/",
     description:
-      "Samuel is the visionary leader driving the company’s mission to build impactful digital solutions for Africa.",
+      "Samuel is the visionary leader driving the company's mission to build impactful digital solutions for Africa.",
   },
   {
     name: "Peter Karanja",

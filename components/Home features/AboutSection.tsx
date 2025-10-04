@@ -81,7 +81,7 @@ export default function AboutSection() {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-            <CarouselContent>
+            <CarouselContent className="px-5">
               {/* Glassmorphism Card Container */}
               <div
                 className="bg-gradient-to-r from-transparent via-white/5 to-transparent 

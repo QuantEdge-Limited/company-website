@@ -237,7 +237,7 @@ export default function AboutSection() {
             {processCards.map((card) => (
               <Card
                 key={card.title}
-                className="bg-white 
+                className="bg-white p-0
                    rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] 
                    overflow-hidden 
                    border-1 border-black/50

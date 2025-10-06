@@ -3,6 +3,16 @@ import { Button } from "../ui/button";
 import { FaChevronRight } from "react-icons/fa6";
 
 export default function HeroSection() {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       {/* Hero Section - Full screen height with responsive padding */}
@@ -56,12 +66,16 @@ export default function HeroSection() {
           {/* Call-to-Action Buttons - Responsive layout and sizing */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
             {/* Primary CTA Button */}
-            <Button className="w-full sm:w-auto bg-black hover:bg-gray-900 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 shadow-lg">
+            <Button 
+              onClick={scrollToServices}
+              className="w-full sm:w-auto bg-black hover:bg-gray-900 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 shadow-lg"
+            >
               Explore Services
             </Button>
 
             {/* Secondary CTA Button */}
             <Button
+              onClick={scrollToAbout}
               variant="ghost"
               className="w-full sm:w-auto text-white hover:text-[#00F5D4] hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg transition-colors duration-300 rounded-xl sm:rounded-2xl"
             >
@@ -73,12 +87,7 @@ export default function HeroSection() {
           
         </div>
 
-        {/* Scroll Indicator - Only visible on larger screens */}
-        <div className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
+
       </section>
     </>
   );

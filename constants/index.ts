@@ -100,7 +100,7 @@ export const teamMembers = [
     },
     image: "/images/team/",
     description:
-      "Samuel is the visionary leader driving the company's mission to build impactful digital solutions for Africa.",
+      "A Software Engineer by profession with a background in Economics, Samuel combines technical expertise with business acumen to build impactful solutions.He is also the founder of EliteMotion Limited, a distribution company, and has played key leadership roles in other ventures spanning technology, trade, and infrastructure.",
   },
   {
     name: "Peter Karanja",
@@ -108,7 +108,7 @@ export const teamMembers = [
     social: {
       twitter: "https://twitter.com/",
       linkedin: "https://linkedin.com/in/",
-      github: "https://github.com/",
+      github: "https://github.com/samuelnmu",
     },
     image: "/images/team/",
     description:

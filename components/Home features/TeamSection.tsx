@@ -33,7 +33,7 @@ export default function TeamSection() {
       {/* Main team section with responsive gradient background and padding */}
       <section
         id="team"
-        className="bg-gradient-to-r from-white via-blue-50/50 to-blue-50 
+        className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 
                    px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
       >
         {/* Section header with responsive typography */}
@@ -41,14 +41,11 @@ export default function TeamSection() {
           {/* Badge/Tag with responsive sizing and spacing */}
           <div
             className="inline-block px-3 sm:px-4 md:px-6 py-2 sm:py-3 
-                          bg-gradient-to-r from-blue-100 to-rose-100 backdrop-blur-lg 
+                          bg-gradient-to-r from-blue-500 to-purple-500 backdrop-blur-lg 
                           rounded-full text-xs sm:text-sm md:text-base text-center 
-                          font-medium border border-white/30 mb-4"
+                          font-medium border border-white/30 mb-4 shadow-md"
           >
-            <span
-              className="bg-gradient-to-r from-blue-600 to-purple-600 
-                           bg-clip-text text-transparent"
-            >
+            <span className="text-white font-semibold">
               Meet
             </span>
           </div>
@@ -56,14 +53,14 @@ export default function TeamSection() {
           {/* Main heading with responsive font sizes */}
           <h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
-                         font-bold mb-4 md:mb-6"
+                         font-bold mb-4 md:mb-6 text-gray-900"
           >
             Our Team
           </h2>
 
           {/* Subtitle with responsive typography */}
           <p
-            className="text-sm sm:text-base md:text-lg text-gray-600 
+            className="text-sm sm:text-base md:text-lg text-gray-700 
                         max-w-2xl mx-auto px-4"
           >
             A diverse group of experts driving innovation forward
@@ -79,19 +76,19 @@ export default function TeamSection() {
           {teamMembers.map((member) => (
             <Card
               key={member.name}
-              className="flex flex-col h-full shadow-md hover:shadow-lg transition-shadow duration-300
-                         border border-gray-200/50 backdrop-blur-sm"
+              className="flex flex-col h-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1
+                         border-2 border-blue-200 bg-white backdrop-blur-sm"
             >
               {/* Card header with avatar and basic info */}
               <CardHeader className="flex flex-col items-center space-y-4 p-4 md:p-6 flex-shrink-0">
                 {/* Avatar with responsive sizing */}
                 <Avatar
                   className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 
-                                  ring-4 ring-blue-100/50"
+                                  ring-4 ring-blue-400"
                 >
                   <AvatarImage src={member.image} alt={member.name} />
                   <AvatarFallback
-                    className="bg-gradient-to-r from-blue-100 to-rose-100 
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 
                                             text-white font-semibold text-lg"
                   >
                     {member.name.charAt(0)}
@@ -119,7 +116,7 @@ export default function TeamSection() {
               <CardContent className="flex-grow p-4 md:p-6 pt-0">
                 <CardDescription
                   className="text-xs sm:text-sm md:text-base 
-                                           text-center text-gray-600 
+                                           text-center text-gray-700 
                                            leading-relaxed"
                 >
                   {member.description}
@@ -136,8 +133,8 @@ export default function TeamSection() {
                     key={platform}
                     href={url}
                     aria-label={platform}
-                    className="hover:text-blue-500 transition-colors duration-300"
-                    target="_blank" // optional: opens in new tab
+                    className="text-gray-700 hover:text-blue-600 transition-colors duration-300 hover:scale-110 transform"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     {socialIcons[platform as keyof typeof socialIcons] ||
@@ -164,7 +161,7 @@ export default function TeamSection() {
 
           {/* Open positions subtitle */}
           <p
-            className="text-sm sm:text-base md:text-lg text-gray-600 
+            className="text-sm sm:text-base md:text-lg text-gray-700 
                         leading-relaxed max-w-xl mx-auto"
           >
             Explore exciting career opportunities with us today

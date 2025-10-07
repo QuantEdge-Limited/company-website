@@ -36,6 +36,36 @@ export const processCards = [
   },
 ];
 
+export const servicesOffered = [
+  {
+    category: "Technology",
+    title: "ERP Systems",
+    description:
+      "Streamline operations with custom enterprise resource planning solutions built for efficiency and scalability.",
+    image: "/images/services/erp.jpg",
+    alt: "ERP Systems - Enterprise Resource Planning Solutions",
+    buttonLabel: "Learn",
+  },
+  {
+    category: "Development",
+    title: "Web & Mobile Development",
+    description:
+      "Create powerful, responsive, and high-performing platforms tailored to your unique business goals.",
+    image: "/images/services/web.jpg",
+    alt: "Web & Mobile Development - Custom Digital Solutions",
+    buttonLabel: "Explore",
+  },
+  {
+    category: "Design",
+    title: "UI/UX Design",
+    description:
+      "Craft intuitive and visually stunning digital experiences that engage users and elevate your brand identity.",
+    image: "/images/services/uiux.jpg",
+    alt: "UI/UX Design - User Experience & Interface Design",
+    buttonLabel: "Discover",
+  },
+];
+
 export const testimonials = [
   {
     name: "Grace Mwangi",

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -9,6 +9,15 @@ import Image from "next/image";
 export default function Navbar() {
   // State to manage mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
@@ -23,7 +32,13 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navigation Bar */}
-      <nav className="w-full h-[72px] fixed top-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 bg-white/30 backdrop-blur-lg shadow-sm">
+      <nav
+        className={`w-full h-[72px] fixed top-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-md"
+            : "bg-transparent"
+        }`}
+      >
         {/* Logo Section - Responsive text sizing */}
         <div className="flex items-center">
           {/* Logo Icon - Optional: Add your logo image here */}
@@ -87,7 +102,9 @@ export default function Navbar() {
         {/* Mobile Menu Button - Visible on mobile/tablet only */}
         <button
           onClick={toggleMobileMenu}
-          className="lg:hidden p-2 text-white hover:text-[#00F5D4] transition-colors duration-300"
+          className={`lg:hidden p-2 transition-colors duration-300 ${
+            isScrolled ? "text-black" : "text-white"
+          }`}
           aria-label="Toggle mobile menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

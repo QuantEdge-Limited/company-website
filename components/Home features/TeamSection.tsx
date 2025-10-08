@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "../ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import {
   FaDribbble,
@@ -63,7 +58,11 @@ export default function TeamSection() {
             >
               <CardHeader className="flex flex-col items-center space-y-4 p-6">
                 <Avatar className="w-24 h-24 ring-4 ring-blue-100/30">
-                  <AvatarImage src={m.image} alt={m.name} />
+                  <AvatarImage
+                    src={m.image}
+                    alt={m.name}
+                    className="object-cover object-center"
+                  />
                   <AvatarFallback className="bg-gradient-to-r from-blue-200 to-rose-200 text-white font-semibold">
                     {m.name.charAt(0)}
                   </AvatarFallback>
@@ -89,7 +88,17 @@ export default function TeamSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={platform}
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                      className={`text-gray-600 transition-colors duration-300 hover:${
+                        platform === "linkedin"
+                          ? "text-blue-700"
+                          : platform === "twitter"
+                          ? "text-black"
+                          : platform === "github"
+                          ? "text-gray-900"
+                          : platform === "instagram"
+                          ? "text-pink-500"
+                          : "text-blue-600"
+                      }`}
                     >
                       {socialIcons[platform as keyof typeof socialIcons]}
                     </Link>

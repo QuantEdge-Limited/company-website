@@ -150,15 +150,16 @@ export default function Footer() {
             <div className="sm:col-span-2 lg:col-span-2 space-y-4 sm:space-y-6">
               {/* Company Logo and Name */}
               <div className="flex items-center justify-center sm:justify-start space-x-3">
-                {/* Logo Icon */}
-
-                <Image
-                  src="/BGlogo.png"
-                  alt="logo"
-                  width={500}
-                  height={500}
-                  className="w-14 h-14 md:w-28 md:h-28 rounded-full"
-                />
+                <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                  <Image
+                    src="/BGlogo.png"
+                    alt="logo"
+                    width={500}
+                    height={500}
+                    className="object-contain w-full h-full"
+                    priority
+                  />
+                </div>
 
                 {/* Company Name - Responsive typography */}
                 <span

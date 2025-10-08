@@ -22,7 +22,7 @@ export default function HeroSection() {
   bg-gradient-to-br from-[#FEEBC8] via-[#FBD38D] to-[#F6AD55]" // warm light fallback gradient
         style={{
           backgroundImage: `
-      url('/images/hero2.jpg'),
+      url('/images/hero3.jpg'),
       linear-gradient(to bottom right, #FEEBC8, #FBD38D, #F6AD55)
     `,
           backgroundSize: "cover",

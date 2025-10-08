@@ -234,16 +234,16 @@ export const teamMembers = [
     name: "Samuel Ngige Mungai",
     title: "Founder & Chief Executive Officer",
     department: "Management",
-    image: "/images/team/samuel.jpg",
+    image: "/images/team/ceo.png", // or .jpg if you changed it
     social: {
-      twitter: "https://twitter.com/",
-      linkedin: "https://linkedin.com/in/",
+      twitter: "https://twitter.com/fintechsam_254",
+      linkedin: "https://www.linkedin.com/in/samuelngige",
       github: "https://github.com/samuelnmu",
     },
     description:
       "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of QUANTEDGE LIMITED, he leads the company’s mission to drive digital transformation across Africa. His passion lies in merging technology and strategy to create scalable, impactful business solutions.",
   },
-
+  
   // 📋 Project Management
   {
     name: "Linda Njeri",

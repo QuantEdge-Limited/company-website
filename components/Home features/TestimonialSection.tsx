@@ -54,33 +54,36 @@ export default function TestimonialSection() {
         </div>
 
         {/* Carousel */}
-        <div className="w-full max-w-4xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
           <Carousel
             className="w-full"
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
               {testimonials.map((t, index) => (
-                <CarouselItem key={index}>
-                  <Card>
-                    <CardContent className="flex flex-col items-center justify-center p-10">
+                <CarouselItem
+                  key={index}
+                  className="pl-2 sm:pl-3 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3"
+                >
+                  <Card className="h-full">
+                    <CardContent className="flex flex-col justify-between p-4 sm:p-5 md:p-6 min-h-[240px] sm:min-h-[260px] md:min-h-[280px]">
                       <div className="text-2xl mb-4">{getStars(t.rating)}</div>
                       <blockquote className="text-base sm:text-lg md:text-xl italic mb-8 text-gray-700 max-w-3xl">
                         &ldquo;{t.testimonial}&rdquo;
                       </blockquote>
-                      <div className="flex items-center space-x-4">
+                      <div className="flex items-center justify-center space-x-4">
                         <div className="relative w-14 h-14 rounded-full overflow-hidden">
                           <Image
-                            src="/images/image_3.svg"
+                            src="/user.png"
                             alt={t.name}
                             width={56}
                             height={56}
                             className="object-cover"
                           />
                         </div>
-                        <div className="text-left">
+                        <div className="text-center">
                           <p className="font-semibold text-gray-900">
                             {t.name}
                           </p>
@@ -95,8 +98,10 @@ export default function TestimonialSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-blue-100/40 hover:bg-blue-100/70 text-gray-900" />
-            <CarouselNext className="bg-blue-100/40 hover:bg-blue-100/70 text-gray-900" />
+            <div className="hidden sm:block">
+              <CarouselPrevious className="left-2 md:-left-12 lg:-left-16 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+              <CarouselNext className="right-2 md:-right-12 lg:-right-16 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+            </div>
           </Carousel>
         </div>
       </section>

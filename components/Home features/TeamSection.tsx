@@ -3,12 +3,9 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardDescription,
   CardHeader,
 } from "../ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
-import { Button } from "../ui/button";
-
 import {
   FaDribbble,
   FaGithub,

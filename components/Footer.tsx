@@ -44,6 +44,7 @@ function FooterLink({ title, items }: FooterLinkProps) {
           <li key={link.name}>
             <Link
               href={link.href}
+              target="_blank"
               className="block text-xs sm:text-sm text-white/70 hover:text-[#00F5D4] 
                           duration-300 hover:translate-x-1 
                          transform transition-transform"
@@ -81,7 +82,7 @@ export default function Footer() {
         className="border-b border-white/10 py-8 sm:py-12 lg:py-16"
         aria-labelledby="newsletter-heading"
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             {/* Newsletter Content - Left Side */}
             <div className="space-y-3 sm:space-y-4 text-center lg:text-left">
@@ -140,7 +141,7 @@ export default function Footer() {
         Contains company info, contact details, and navigation links
       */}
       <section className="py-8 sm:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="max-w-9xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
             {/* 
               COMPANY INFORMATION SECTION - Left Side

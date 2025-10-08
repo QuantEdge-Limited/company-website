@@ -37,49 +37,76 @@ export default function ServicesSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {servicesOffered.map((service) => (
-            <Card
-              key={service.title}
-              className="bg-white/70 backdrop-blur-md border border-black/10
-                       rounded-3xl overflow-hidden flex flex-col
-                       transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-            >
-              {/* Image */}
-              <div className="relative h-48 sm:h-56 md:h-60 lg:h-64">
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+        <div
+          className="max-w-7xl mx-auto 
+             grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
+             gap-6 md:gap-5"
+        >
+          {servicesOffered.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <Card
+                key={service.title}
+                className="relative p-8 h-full bg-white/80 backdrop-blur-md border border-black/10
+             rounded-3xl overflow-hidden flex flex-col justify-between
+             transition-all duration-500 shadow-custom hover:shadow-hover group"
+              >
+                {/* Gradient Hover Background */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} 
+                opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 />
-              </div>
 
-              {/* Content */}
-              <div className="p-6 md:p-8 flex flex-col items-start justify-start flex-grow">
-                <div>
-                  <span className="text-blue-600 text-xs sm:text-sm font-medium uppercase tracking-wide">
-                    {service.category}
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold mt-3 mb-4 leading-tight text-gray-900">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                {/* Content */}
+                <div className="relative z-10 flex flex-col flex-grow justify-between space-y-6">
+                  {/* Icon */}
+                  <div
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center 
+                  bg-gradient-to-br ${service.gradient} 
+                  transform group-hover:scale-110 transition-transform duration-500 shadow-md`}
+                  >
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="flex-grow space-y-3">
+                    <span className="text-blue-600 text-xs sm:text-sm md:text-base font-medium uppercase tracking-wide">
+                      {service.category}
+                    </span>
+
+                    <h3
+                      className="text-xl sm:text-2xl font-semibold leading-snug text-gray-900"
+                      style={{
+                        fontFamily: "Montserrat, sans-serif",
+                      }}
+                    >
+                      {service.title}
+                    </h3>
+
+                    <p
+                      className="text-sm sm:text-base leading-relaxed text-gray-700"
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                      }}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Button */}
+                  <Button
+                    className="text-blue-600 hover:text-blue-700 transition-all duration-300 
+                 flex items-center px-0 py-0 h-auto group cursor-pointer"
+                    variant="ghost"
+                  >
+                    <span>{service.buttonLabel}</span>
+                    <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
-
-                <Button
-                  className="text-blue-600 hover:text-blue-700 transition-all duration-300 
-                           flex items-center px-0 py-0 h-auto group"
-                  variant="ghost"
-                >
-                  <span className="mr-2">{service.buttonLabel}</span>
-                  <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
       </section>
     </>

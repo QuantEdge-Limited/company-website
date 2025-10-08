@@ -25,20 +25,22 @@ export default function Navbar() {
       {/* Main Navigation Bar */}
       <nav className="w-full h-[72px] fixed top-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 bg-white/30 backdrop-blur-lg shadow-sm">
         {/* Logo Section - Responsive text sizing */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center">
           {/* Logo Icon - Optional: Add your logo image here */}
-          <Image
-            src="/BGlogo.png"
-            alt="logo"
-            width={500}
-            height={500}
-            className="w-14 h-14 md:w-16 md:h-16 rounded-full"
-          />
+          <Link href="/">
+            <Image
+              src="/BGlogo2.png"
+              alt="logo"
+              width={594}
+              height={420}
+              className="w-[170px] h-24"
+            />
+          </Link>
 
           {/* Company Name - Responsive sizing and truncation */}
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-black/70 truncate">
+          {/* <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-black/70 truncate">
             QuantEdge Limited
-          </h1>
+          </h1> */}
         </div>
 
         {/* Desktop Navigation Menu - Hidden on mobile/tablet */}
@@ -46,26 +48,30 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="flex items-center gap-4 xl:gap-6 text-black/70">
             <Link
-              href="#home"
-              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
+              href="/"
+              className="text-sm xl:text-lg hover:text-black duration-300 hover:-translate-y-1 
+                         transform transition-transform"
             >
               Home
             </Link>
             <Link
               href="#about"
-              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
+              className="text-sm xl:text-lg hover:text-black duration-300 hover:-translate-y-1 
+                         transform transition-transform"
             >
               About
             </Link>
             <Link
               href="#services"
-              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
+              className="text-sm xl:text-lg hover:text-black duration-300 hover:-translate-y-1 
+                         transform transition-transform"
             >
               Services
             </Link>
             <Link
               href="#team"
-              className="text-sm xl:text-base hover:text-black transition-colors duration-300"
+              className="text-sm xl:text-lg hover:text-black duration-300 hover:-translate-y-1 
+                         transform transition-transform"
             >
               Team
             </Link>

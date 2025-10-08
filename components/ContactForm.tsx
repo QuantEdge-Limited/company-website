@@ -83,7 +83,7 @@ export function ContactForm() {
 
   return (
     // Main card container with glass morphism effect and full width on mobile
-    <Card className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-black/20 shadow-xl">
+    <Card className="w-full max-w-2xl mx-auto bg-white/70 backdrop-blur-md border border-black/10 shadow-xl">
       {/* Card Header - responsive text sizing */}
       <CardHeader className="text-center sm:text-left">
         <CardTitle className="text-xl sm:text-2xl">Contact Us</CardTitle>

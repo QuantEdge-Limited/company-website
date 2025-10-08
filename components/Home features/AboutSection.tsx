@@ -1,325 +1,300 @@
 import Image from "next/image";
 import React from "react";
-import { Carousel, CarouselContent } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { FaChevronRight } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { processCards } from "@/constants";
+import { companyProfile, workflowSteps } from "@/constants";
 
 export default function AboutSection() {
   // Autoplay plugin configuration for carousel
   // Delays 8 seconds between transitions and stops when user interacts
   const plugin = React.useRef(
-    Autoplay({ delay: 8000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
     <>
-      {/* 
-        ABOUT SECTION - Hero area with carousel showcasing company mission
-        Dark theme with gradient backgrounds and glassmorphism effects
-      */}
+      {/* ABOUT SECTION */}
       <section
         id="about"
-        className="bg-[#0D1B2A] 
-                   px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 
-                   py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 
-                   flex flex-col justify-center min-h-screen"
+        className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70
+             dark:[color-scheme:light]
+             px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16
+             py-16 sm:py-20 md:py-24
+             flex flex-col justify-center text-neutral-900"
       >
-        {/* Header Section - Responsive text sizing and spacing */}
-        <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          {/* Innovation Badge - Glassmorphism effect with gradient text */}
-          <div
-            className="inline-block 
-                       px-2 sm:px-3 md:px-4 lg:px-5
-                       py-1.5 sm:py-2 md:py-2.5 lg:py-3
-                       bg-gradient-to-r from-blue-100 to-rose-100 backdrop-blur-lg 
-                       rounded-full 
-                       text-xs sm:text-sm md:text-base lg:text-lg
-                       text-center font-medium border border-white/30 
-                       mb-3 sm:mb-4 md:mb-5 lg:mb-6"
-          >
-            <span
-              className="bg-gradient-to-r from-blue-600 to-purple-600 
-                         bg-clip-text text-transparent font-semibold"
+        <div className="max-w-7xl mx-auto w-full">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <div
+              className="inline-block px-4 py-2 sm:px-5 sm:py-2.5
+                      bg-gradient-to-r from-blue-100 to-rose-100 
+                      backdrop-blur-md border border-black/10
+                      rounded-full text-sm sm:text-base font-medium"
             >
-              Innovate
-            </span>
-          </div>
-
-          {/* Main Heading - Responsive typography scaling */}
-          <div className="text-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
-            <h1
-              className="text-white 
-                          text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
-                          font-bold leading-tight sm:leading-tight md:leading-tight"
-            >
+              <span className="bg-gradient-to-r from-blue-600 to-rose-500 bg-clip-text text-transparent font-semibold">
+                Innovate
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 mb-3">
               Who we are
             </h1>
-          </div>
-
-          {/* Subheading - Responsive text and spacing */}
-          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
-            <p
-              className="text-gray-400 
-                         text-base sm:text-lg md:text-xl lg:text-2xl 
-                         font-light leading-relaxed
-                         max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 
-                         mx-auto px-4 sm:px-0"
-            >
+            <p className="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
               Technology partners driving digital transformation
             </p>
           </div>
-        </div>
 
-        {/* Main Content Card - Carousel with responsive sizing */}
-        <div className="max-w-7xl mx-auto w-full px-2 sm:px-0">
+          {/* Company History */}
+          <div className="mb-20 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
+              Our History
+            </h2>
+
+            <p className="text-gray-700 text-lg leading-relaxed mb-10">
+              <strong>QUANTEDGE LIMITED</strong> is a forward-thinking
+              technology company committed to crafting intelligent ERP systems
+              and AI-powered software solutions that redefine how businesses
+              operate. Driven by a bold mission to transform Africa through
+              innovation, we are leading the continent toward a new era of
+              digital excellence and opportunity.
+              <br />
+              <br />
+              Founded by <strong>Samuel Ngige Mungai</strong> — a passionate
+              software engineer and visionary entrepreneur — QUANTEDGE LIMITED
+              stands at the intersection of creativity and technology, where
+              ambition meets execution. We do not just build software; we
+              challenge convention, reimagine possibilities, and design with
+              purpose — turning visionary ideas into real, measurable impact.
+            </p>
+
+            <div className="flex flex-col sm:flex-row text-center justify-center gap-8 text-gray-600">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900">2024</h3>
+                <p className="mt-2 text-sm">
+                  Founded as a boutique software firm.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900">2025</h3>
+                <p className="mt-2 text-sm">
+                  Recognized as a leading digital innovator in enterprise and AI
+                  solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Carousel */}
           <Carousel
             className="w-full"
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-            <CarouselContent className="px-5">
-              {/* Glassmorphism Card Container */}
-              <div
-                className="bg-gradient-to-r from-transparent via-white/5 to-transparent 
-                            rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2rem] 
-                            border border-white/10 overflow-hidden backdrop-blur-sm"
-              >
-                {/* Two Column Layout - Responsive grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image Section - Responsive height scaling */}
+            <CarouselContent>
+              {companyProfile.map((item, index) => (
+                <CarouselItem key={index}>
                   <div
-                    className="relative 
-                                h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] 2xl:h-[650px]
-                                order-2 lg:order-1"
+                    key={index}
+                    className="bg-white/70 backdrop-blur-md border border-black/10
+                         rounded-3xl overflow-hidden transition-all duration-500"
                   >
-                    <div
-                      className="absolute inset-0 
-                                  rounded-t-xl sm:rounded-t-2xl md:rounded-t-3xl lg:rounded-l-[2rem] lg:rounded-tr-none
-                                  overflow-hidden"
-                    >
-                      <Image
-                        src="/about-image.jpg"
-                        alt="About QuantEdge - Team collaboration and innovation"
-                        fill
-                        className="object-cover transition-transform duration-700 hover:scale-105"
-                        priority
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                      />
+                    <div className="grid grid-cols-1 lg:grid-cols-2">
+                      {/* Image */}
+                      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px]">
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          fill
+                          className="object-cover transition-transform duration-700 hover:scale-105"
+                          priority={index === 0}
+                        />
+                      </div>
+
+                      {/* Text */}
+                      <div className="bg-white/80 backdrop-blur-lg p-8 md:p-12 flex flex-col justify-center">
+                        <span className="text-blue-600 text-sm font-medium uppercase tracking-wider mb-4">
+                          {item.category}
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900">
+                          {item.title}
+                        </h2>
+                        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                          {item.description}
+                        </p>
+                        <Button
+                          className="text-blue-600 hover:text-blue-700 
+                               transition-all duration-300 
+                               p-3 w-12 h-12 rounded-full
+                               border border-blue-200 hover:bg-blue-50 hover:shadow-sm"
+                        >
+                          <FaChevronRight className="w-5 h-5" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Content Section - Responsive padding and typography */}
-                  <div
-                    className="bg-[#0a1426] 
-                               p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16
-                               flex flex-col justify-center
-                               rounded-b-xl sm:rounded-b-2xl md:rounded-b-3xl lg:rounded-r-[2rem] lg:rounded-bl-none
-                               order-1 lg:order-2"
-                  >
-                    {/* Digital Badge */}
-                    <div className="mb-4 sm:mb-5 md:mb-6">
-                      <span
-                        className="text-[#4a9eff] 
-                                     text-xs sm:text-sm md:text-base
-                                     font-medium tracking-wider uppercase"
-                      >
-                        Digital
-                      </span>
-                    </div>
-
-                    {/* Mission Heading - Responsive text scaling */}
-                    <h2
-                      className="text-white 
-                                 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
-                                 font-bold 
-                                 mb-6 sm:mb-7 md:mb-8 lg:mb-10
-                                 leading-tight"
-                    >
-                      Our mission
-                    </h2>
-
-                    {/* Description Text - Responsive sizing and line height */}
-                    <p
-                      className="text-gray-300 
-                                text-base sm:text-lg md:text-xl lg:text-2xl
-                                leading-relaxed 
-                                mb-6 sm:mb-7 md:mb-8 lg:mb-10
-                                font-light"
-                    >
-                      We empower businesses through cutting-edge technological
-                      solutions and strategic digital innovation.
-                    </p>
-
-                    {/* Call-to-Action Arrow Button */}
-                    <div className="flex">
-                      <Button
-                        className="text-[#4a9eff] hover:text-[#6bb3ff] 
-                                       transition-all duration-300 
-                                       p-2 sm:p-3 md:p-4
-                                       w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
-                                       hover:bg-white/10 rounded-full
-                                       border border-transparent hover:border-[#4a9eff]/30"
-                      >
-                        <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </CarouselItem>
+              ))}
             </CarouselContent>
           </Carousel>
         </div>
       </section>
 
-      {/* 
-        HOW WE WORK SECTION - Process showcase with three-card layout
-        Light theme with gradient backgrounds and card-based design
-      */}
-      <section
-        className="bg-gradient-to-r from-white via-blue-50/50 to-blue-50 
-                         py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 
-                         px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16"
-      >
-        {/* Header Section - Consistent with above section */}
-        <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          {/* Process Badge - Matching style with innovation badge */}
-          <div
-            className="inline-block 
-                       px-2 sm:px-3 md:px-4 lg:px-5
-                       py-1.5 sm:py-2 md:py-2.5 lg:py-3
-                       bg-gradient-to-r from-blue-100 to-rose-100 backdrop-blur-lg 
-                       rounded-full 
-                       text-xs sm:text-sm md:text-base lg:text-lg
-                       text-center font-medium border border-white/30 
-                       mb-3 sm:mb-4 md:mb-5 lg:mb-6"
-          >
-            <span
-              className="bg-gradient-to-r from-blue-600 to-purple-600 
-                         bg-clip-text text-transparent font-semibold"
-            >
-              Process
-            </span>
-          </div>
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gray-200/50 to-transparent" />
 
-          {/* Main Heading - Responsive dark text */}
-          <div className="text-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
-            <h1
-              className="text-black 
-                          text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-                          font-bold leading-tight"
+      {/* HOW WE WORK SECTION */}
+      <section
+        className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70
+                   dark:[color-scheme:light]
+                   px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16
+                   py-16 sm:py-20 md:py-24 text-neutral-900"
+      >
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div
+              className="inline-block px-4 py-2 sm:px-5 sm:py-2.5
+                         bg-gradient-to-r from-blue-100 to-rose-100 
+                         backdrop-blur-md border border-black/10
+                         rounded-full text-sm sm:text-base font-medium"
             >
+              <span className="bg-gradient-to-r from-blue-600 to-rose-500 bg-clip-text text-transparent font-semibold">
+                Process
+              </span>
+            </div>
+
+            <h1 className="text-gray-900 text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
               How we work
             </h1>
-          </div>
-
-          {/* Subheading - Constrained width for readability */}
-          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
-            <p
-              className="text-gray-700 
-                         text-base sm:text-lg md:text-xl lg:text-2xl
-                         font-normal leading-relaxed
-                         max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 
-                         mx-auto px-4 sm:px-0"
-            >
+            <p className="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
               Our strategic approach to delivering exceptional technology
               solutions
             </p>
           </div>
-        </div>
 
-        {/* Process Cards Container - Responsive grid layout */}
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
-            {processCards.map((card) => (
-              <Card
-                key={card.title}
-                className="bg-white
-                   rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] 
-                   overflow-hidden 
-                   border-1 border-black/50
-                   flex-1 
-                   transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
-                   group"
-              >
-                {/* Card Image */}
-                <div className="relative h-32 sm:h-40 md:h-48 lg:h-52 xl:h-56">
-                  <Image
-                    src={card.image}
-                    alt={card.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          {/* Cards */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Left - Main Card */}
+            <div className="lg:w-1/2">
+              {workflowSteps[0] && (
+                <Card
+                  key={workflowSteps[0].title}
+                  className="bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/40 backdrop-blur-xl 
+                 border border-white/60 shadow-lg
+                 rounded-3xl overflow-hidden h-full flex flex-col
+                 justify-between transition-all duration-500 
+                 hover:shadow-2xl hover:shadow-blue-200/50 hover:-translate-y-2 hover:scale-[1.01]
+                 hover:border-blue-200/60 relative group"
+                >
+                  {/* Subtle gradient overlay on hover */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 
+                 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 
+                 transition-all duration-500 pointer-events-none rounded-3xl"
                   />
-                </div>
 
-                {/* Card Content */}
-                <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-                  {/* Category Label */}
-                  <div className="mb-2 sm:mb-3">
-                    <span
-                      className="text-gray-700 
-                         text-xs sm:text-sm md:text-base
-                         font-medium uppercase tracking-wide"
+                  <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-between h-full relative z-10">
+                    <div>
+                      <span
+                        className="inline-block relative text-[0.7rem] sm:text-xs font-semibold uppercase tracking-wider
+             bg-white/10 backdrop-blur-md border border-white/20 text-blue-600
+             px-3 py-1.5 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)] overflow-hidden"
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/20 to-purple-500/10 opacity-60" />
+                        <span className="relative z-10">
+                          {workflowSteps[0].step}
+                        </span>
+                      </span>
+
+                      <h3
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight 
+                     bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent"
+                      >
+                        {workflowSteps[0].title}
+                      </h3>
+
+                      <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
+                        {workflowSteps[0].description}
+                      </p>
+                    </div>
+
+                    <Button
+                      className="text-blue-600 hover:text-blue-700 transition-all duration-300 
+                     flex items-center gap-2 px-0 py-0 h-auto group/btn cursor-pointer bg-transparent border-0
+                     font-semibold text-base"
+                      variant="ghost"
                     >
-                      {card.category}
-                    </span>
+                      <span>{workflowSteps[0].buttonLabel}</span>
+                      <FaChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
                   </div>
+                </Card>
+              )}
+            </div>
 
-                  {/* Card Title */}
-                  <h3
-                    className="text-black 
-                       text-xl sm:text-2xl md:text-3xl lg:text-4xl
-                       font-bold 
-                       mb-3 sm:mb-4 md:mb-5 lg:mb-6
-                       leading-tight"
-                  >
-                    {card.title}
-                  </h3>
+            {/* Right - Grid of 4 Smaller Cards */}
+            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {workflowSteps.slice(1).map((card, index) => (
+                <Card
+                  key={card.title}
+                  className="bg-gradient-to-br from-white/90 via-white/70 to-blue-50/30 backdrop-blur-xl 
+                 border border-white/60 shadow-md
+                 rounded-3xl overflow-hidden transition-all duration-500 
+                 hover:shadow-xl hover:shadow-blue-200/40 hover:-translate-y-2 hover:scale-[1.02]
+                 hover:border-blue-200/60 relative group"
+                >
+                  {/* Decorative corner accent */}
+                  <div
+                    className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-transparent 
+                 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  />
 
-                  {/* Card Description */}
-                  <p
-                    className="text-gray-700 
-                       text-sm sm:text-base md:text-lg
-                       leading-relaxed 
-                       mb-6 sm:mb-7 md:mb-8 lg:mb-10"
-                  >
-                    {card.description}
-                  </p>
+                  <div className="p-6 md:p-8 flex flex-col justify-between h-full relative z-10">
+                    <div>
+                      <span
+                        className="inline-block relative text-[0.7rem] sm:text-xs font-semibold uppercase tracking-wider
+             bg-white/10 backdrop-blur-md border border-white/20 text-blue-600
+             px-3 py-1.5 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)] overflow-hidden"
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/20 to-purple-500/10 opacity-60" />
+                        <span className="relative z-10">{card.step}</span>
+                      </span>
 
-                  {/* CTA Button */}
-                  <Button
-                    className="flex items-center 
-                       text-black font-medium 
-                       hover:text-gray-700 
-                       transition-all duration-300
-                       text-sm sm:text-base md:text-lg
-                       hover:bg-gray-100 
-                       px-0 py-0 h-auto
-                       group-hover:translate-x-2"
-                  >
-                    <span className="mr-2">{card.buttonLabel}</span>
-                    <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+                      <h3
+                        className="text-xl sm:text-2xl font-bold mt-3 mb-3 leading-tight 
+                     bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent"
+                      >
+                        {card.title}
+                      </h3>
 
-        {/* 
-          Scroll Indicator - Hidden on mobile, visible on larger screens
-          Animated bounce effect to encourage scrolling
-        */}
-        <div className="hidden lg:block absolute bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 xl:w-6 xl:h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <div className="w-1 h-2.5 xl:w-1 xl:h-3 bg-white/60 rounded-full mt-1.5 xl:mt-2 animate-pulse"></div>
+                      <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+                        {card.description}
+                      </p>
+                    </div>
+
+                    <Button
+                      className="text-blue-600 hover:text-blue-700 transition-all duration-300 
+                     flex items-center gap-2 px-0 py-0 h-auto group/btn cursor-pointer bg-transparent border-0
+                     font-semibold text-sm"
+                      variant="ghost"
+                    >
+                      <span>{card.buttonLabel}</span>
+                      <FaChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gray-200/50 to-transparent" />
     </>
   );
 }

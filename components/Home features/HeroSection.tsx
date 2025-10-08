@@ -4,13 +4,13 @@ import { FaChevronRight } from "react-icons/fa6";
 
 export default function HeroSection() {
   const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+    const servicesSection = document.getElementById("services");
+    servicesSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+    const aboutSection = document.getElementById("about");
+    aboutSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -18,62 +18,73 @@ export default function HeroSection() {
       {/* Hero Section - Full screen height with responsive padding */}
       <section
         id="home"
-        className="relative w-full min-h-screen flex flex-col justify-center items-center pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-28 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 bg-gradient-to-br from-[#0D1B2A] via-[#1B9AAA] to-[#00F5D4]"
+        className="relative w-full min-h-screen flex flex-col justify-center items-center pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-28 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20
+  bg-gradient-to-br from-[#FEEBC8] via-[#FBD38D] to-[#F6AD55]" // warm light fallback gradient
+        style={{
+          backgroundImage: `
+      url('/images/hero2.jpg'),
+      linear-gradient(to bottom right, #FEEBC8, #FBD38D, #F6AD55)
+    `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        {/* Grid Pattern Background Overlay - Responsive grid size */}
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Grid Pattern Overlay */}
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "30px 30px", // Smaller grid on mobile
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+      `,
+            backgroundSize: "30px 30px",
           }}
         />
 
-        {/* Large screen grid pattern */}
+        {/* Larger grid for desktop */}
         <div
           className="absolute inset-0 opacity-20 hidden md:block"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px", // Larger grid on desktop
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+      `,
+            backgroundSize: "50px 50px",
           }}
         />
 
-        {/* Content Container - Responsive width and centering */}
+        {/* Content */}
         <div className="relative text-white text-center max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-          {/* Badge/Tag - Responsive padding and text size */}
+          {/* Tag */}
           <div className="inline-block px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md rounded-full text-xs sm:text-sm md:text-base text-center font-medium border border-white/30 mb-4 sm:mb-6 md:mb-8">
             <span>Innovative Technology Solutions</span>
           </div>
 
-          {/* Main Headline - Responsive typography with proper scaling */}
-          <h1 className="mb-4 sm:mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight tracking-wide">
+          {/* Headline */}
+          <h1 className="mb-4 sm:mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-wide">
             Transforming technology solutions for
             <span className="block sm:inline"> modern businesses</span>
           </h1>
 
-          {/* Subtitle - Responsive text size and width constraints */}
+          {/* Subtitle */}
           <p className="mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed tracking-wide max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto opacity-90">
             QuantEdge delivers innovative digital solutions that help businesses
             thrive in a rapidly evolving technological landscape.
           </p>
 
-          {/* Call-to-Action Buttons - Responsive layout and sizing */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
-            {/* Primary CTA Button */}
-            <Button 
+            <Button
               onClick={scrollToServices}
               className="w-full sm:w-auto bg-black hover:bg-gray-900 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 shadow-lg"
             >
               Explore Services
             </Button>
 
-            {/* Secondary CTA Button */}
             <Button
               onClick={scrollToAbout}
               variant="ghost"
@@ -83,11 +94,7 @@ export default function HeroSection() {
               <FaChevronRight className="inline ml-2 text-sm sm:text-base" />
             </Button>
           </div>
-
-          
         </div>
-
-
       </section>
     </>
   );

@@ -11,7 +11,7 @@ export default function AboutSection() {
   // Autoplay plugin configuration for carousel
   // Delays 8 seconds between transitions and stops when user interacts
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   );
 
   return (
@@ -93,6 +93,9 @@ export default function AboutSection() {
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
+            opts={{
+              loop: true,
+            }}
           >
             <CarouselContent>
               {companyProfile.map((item, index) => (

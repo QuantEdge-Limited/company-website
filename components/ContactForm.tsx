@@ -175,6 +175,7 @@ export function ContactForm() {
                     <FormControl>
                       <Input
                         type="tel"
+                        placeholder="+2547********"
                         className="h-10 sm:h-11 border-gray-200 focus:border-[#1B9AAA] focus:ring-[#1B9AAA]/20 text-sm sm:text-base"
                         {...field}
                         disabled={isPending}

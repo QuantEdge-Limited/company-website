@@ -20,7 +20,7 @@ function getStars(rating: number): string {
 export default function TestimonialSection() {
   // Autoplay plugin configuration for carousel
   const plugin = React.useRef(
-    Autoplay({ delay: 8000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   );
 
   return (
@@ -60,6 +60,9 @@ export default function TestimonialSection() {
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
+             opts={{
+              loop: true,
+            }}
           >
             <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
               {testimonials.map((t, index) => (

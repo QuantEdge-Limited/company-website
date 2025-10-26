@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -9,6 +9,22 @@ import Image from "next/image";
 export default function Navbar() {
   // State to manage mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = window.innerHeight * 0.8; // 80% of viewport height
+      // Show logo only when at the very top of the page (landing section)
+      const showLogo = window.scrollY < threshold;
+      setIsScrolled(!showLogo);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check on mount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
@@ -26,6 +42,8 @@ export default function Navbar() {
       <nav className="w-full h-[72px] fixed top-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 bg-white/30 backdrop-blur-lg shadow-sm">
         {/* Logo Section - Responsive text sizing */}
         <div className="flex items-center">
+          {!isScrolled && (
+            <>
           {/* Logo Icon - Optional: Add your logo image here */}
           <Link href="/">
             <Image
@@ -33,9 +51,11 @@ export default function Navbar() {
               alt="logo"
               width={594}
               height={420}
-              className="w-[170px] h-24"
+              className="w-auto h-15 object-contain"
             />
           </Link>
+          </>
+          )}
 
           {/* Company Name - Responsive sizing and truncation */}
           {/* <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-black/70 truncate">

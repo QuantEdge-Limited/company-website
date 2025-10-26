@@ -18,29 +18,26 @@ export default function HeroSection() {
       {/* Hero Section - Full screen height with responsive padding */}
       <section
         id="home"
-        className="relative w-full min-h-screen flex flex-col justify-center items-center pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-28 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20
-  bg-gradient-to-br from-[#FEEBC8] via-[#FBD38D] to-[#F6AD55]" // warm light fallback gradient
+        className="relative w-full min-h-screen lg:min-h-[92vh] flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20
+          bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800"
         style={{
-          backgroundImage: `
-      url('/images/hero2.jpg'),
-      linear-gradient(to bottom right, #FEEBC8, #FBD38D, #F6AD55)
-    `,
+          backgroundImage: `url('/images/quantedge-website-bg.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Grid Pattern Overlay */}
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-      `,
+              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
             backgroundSize: "30px 30px",
           }}
         />
@@ -50,9 +47,9 @@ export default function HeroSection() {
           className="absolute inset-0 opacity-20 hidden md:block"
           style={{
             backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-      `,
+              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
             backgroundSize: "50px 50px",
           }}
         />
@@ -72,8 +69,7 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p className="mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed tracking-wide max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto opacity-90">
-            QuantEdge delivers innovative digital solutions that help businesses
-            thrive in a rapidly evolving technological landscape.
+            QuantEdge delivers innovative digital solutions that help businesses thrive in a rapidly evolving technological landscape.
           </p>
 
           {/* CTA Buttons */}

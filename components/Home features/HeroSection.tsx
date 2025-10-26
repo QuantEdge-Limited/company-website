@@ -14,88 +14,77 @@ export default function HeroSection() {
   };
 
   return (
-    <>
-      {/* Hero Section - Full screen height with responsive padding */}
-      <section
-        id="home"
-        className="relative w-full min-h-screen flex flex-col justify-center items-center pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-28 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20
-  bg-gradient-to-br from-[#FEEBC8] via-[#FBD38D] to-[#F6AD55]" // warm light fallback gradient
-        style={{
-          backgroundImage: `
-      url('/images/hero2.jpg'),
-      linear-gradient(to bottom right, #FEEBC8, #FBD38D, #F6AD55)
-    `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+    <section
+      id="home"
+      className="relative w-full min-h-[92vh] max-sm:top-[72px] max-sm:mt-4 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-blue-50 to-white"
+    >
+      {/* Left Side: Text Content */}
+      <div className="w-full lg:w-1/2 text-left mb-10 lg:mb-0">
+        {/* Tag */}
+        <div className="inline-block px-4 py-2 bg-[#34156e] text-white rounded-full text-sm font-medium mb-6">
+          Where Precision Meets Innovation
+        </div>
 
-        {/* Grid Pattern Overlay */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-      `,
-            backgroundSize: "30px 30px",
-          }}
-        />
+        {/* Headline */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-6">
+          Engineering Digital Futures for Forward-Thinking Businesses
+        </h1>
 
-        {/* Larger grid for desktop */}
-        <div
-          className="absolute inset-0 opacity-20 hidden md:block"
-          style={{
-            backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-      `,
-            backgroundSize: "50px 50px",
-          }}
-        />
+        {/* Subtitle */}
+        <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+          We build intelligent, scalable systems that turn vision into reality — faster, smarter, and built to last.
+        </p>
 
-        {/* Content */}
-        <div className="relative text-white text-center max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-          {/* Tag */}
-          <div className="inline-block px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md rounded-full text-xs sm:text-sm md:text-base text-center font-medium border border-white/30 mb-4 sm:mb-6 md:mb-8">
-            <span>Innovative Technology Solutions</span>
-          </div>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button
+            onClick={scrollToServices}
+            className="w-full sm:w-auto bg-[#34156e] hover:bg-[#2a1056] text-white px-6 py-3 rounded-xl text-base font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            See Our Work
+          </Button>
 
-          {/* Headline */}
-          <h1 className="mb-4 sm:mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-wide">
-            Transforming technology solutions for
-            <span className="block sm:inline"> modern businesses</span>
-          </h1>
+          <Button
+            onClick={scrollToAbout}
+            variant="outline"
+            className="w-full sm:w-auto border-[#34156e] text-[#34156e] hover:bg-[#f5f5f5] px-6 py-3 rounded-xl text-base font-medium transition-all duration-300 hover:shadow-md"
+          >
+            Meet the Team
+            <FaChevronRight className="inline ml-2" />
+          </Button>
+        </div>
+      </div>
 
-          {/* Subtitle */}
-          <p className="mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed tracking-wide max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto opacity-90">
-            QuantEdge delivers innovative digital solutions that help businesses
-            thrive in a rapidly evolving technological landscape.
-          </p>
+      {/* Right Side: Hero Image with Abstract Tech Overlay */}
+      <div className="w-full lg:w-1/2 flex justify-center relative">
+        <div className="relative w-full max-w-lg lg:max-w-xl">
+          {/* Hero Image */}
+          <img
+            src="/images/quantedge-website-bg1.png"
+            alt="QuantEdge engineer interacting with digital interface"
+            className="w-full h-auto rounded-2xl shadow-2xl"
+          />
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
-            <Button
-              onClick={scrollToServices}
-              className="w-full sm:w-auto bg-black hover:bg-gray-900 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 shadow-lg"
-            >
-              Explore Services
-            </Button>
-
-            <Button
-              onClick={scrollToAbout}
-              variant="ghost"
-              className="w-full sm:w-auto text-white hover:text-[#00F5D4] hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg transition-colors duration-300 rounded-xl sm:rounded-2xl"
-            >
-              Learn More
-              <FaChevronRight className="inline ml-2 text-sm sm:text-base" />
-            </Button>
+          {/* Floating UI Elements Overlay */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Floating Node */}
+            <div className="absolute top-10 right-10 w-12 h-12 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+            {/* Data Stream Line */}
+            <div className="absolute bottom-10 left-10 w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rotate-45"></div>
+            {/* Grid Pattern Overlay */}
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `
+                  linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+                `,
+                backgroundSize: "20px 20px",
+              }}
+            ></div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

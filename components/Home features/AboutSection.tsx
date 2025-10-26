@@ -1,109 +1,142 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import { FaBuilding, FaRocket, FaChevronRight } from "react-icons/fa6";
+import { companyProfile } from "@/constants";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { FaChevronRight } from "react-icons/fa6";
 import { Button } from "../ui/button";
-import { Card } from "../ui/card";
-import { companyProfile, workflowSteps } from "@/constants";
 
 export default function AboutSection() {
-  // Autoplay plugin configuration for carousel
-  // Delays 8 seconds between transitions and stops when user interacts
-  const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
-  );
+  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
+  const historyMilestones = [
+    {
+      year: "2024",
+      title: "Our Beginning",
+      description:
+        "QuantEdge Limited was founded with a bold mission — to redefine how African businesses leverage technology for growth and efficiency.",
+      icon: <FaBuilding className="text-blue-600 w-6 h-6" />,
+    },
+    {
+      year: "2025",
+      title: "Regional Recognition",
+      description:
+        "Within a year, QuantEdge was recognized among East Africa’s top innovators in AI, data-driven ERP solutions, and enterprise software design.",
+      icon: <FaRocket className="text-rose-500 w-6 h-6" />,
+    },
+  ];
 
   return (
     <>
       {/* ABOUT SECTION */}
       <section
         id="about"
-        className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70
-             dark:[color-scheme:light]
-             px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16
-             py-16 sm:py-20 md:py-24
-             flex flex-col justify-center text-neutral-900"
+        className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 flex flex-col justify-center text-neutral-900"
       >
         <div className="max-w-7xl mx-auto w-full">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-14 md:mb-16">
-            <div
-              className="inline-block px-4 py-2 sm:px-5 sm:py-2.5
-                      bg-gradient-to-r from-blue-100 to-rose-100 
-                      backdrop-blur-md border border-black/10
-                      rounded-full text-sm sm:text-base font-medium"
-            >
+            <div className="inline-block px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-blue-100 to-rose-100 backdrop-blur-md border border-black/10 rounded-full text-sm sm:text-base font-medium">
               <span className="bg-gradient-to-r from-blue-600 to-rose-500 bg-clip-text text-transparent font-semibold">
-                Innovate
+                About Us
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 mb-3">
-              Who we are
+              Who We Are
             </h1>
             <p className="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-              Technology partners driving digital transformation
+              Empowering businesses through intelligent technology and inspired innovation.
             </p>
           </div>
 
-          {/* Company History */}
-          <div className="mb-20 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
-              Our History
-            </h2>
+          {/* WHO WE ARE — Two Column */}
+          <div className="mb-20 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* Image */}
+            <div className="relative h-80 sm:h-96 md:h-[450px] rounded-2xl overflow-hidden shadow-xl border border-black/10 transition-transform duration-500 hover:scale-105">
+              <Image
+                src="/images/pexels-joshsorenson-1714208.jpg"
+                alt="QuantEdge team collaborating on cutting-edge technology"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-10">
-              <strong>QUANTEDGE LIMITED</strong> is a forward-thinking
-              technology company committed to crafting intelligent ERP systems
-              and AI-powered software solutions that redefine how businesses
-              operate. Driven by a bold mission to transform Africa through
-              innovation, we are leading the continent toward a new era of
-              digital excellence and opportunity.
-              <br />
-              <br />
-              Founded by <strong>Samuel Ngige Mungai</strong> — a passionate
-              software engineer and visionary entrepreneur — QUANTEDGE LIMITED
-              stands at the intersection of creativity and technology, where
-              ambition meets execution. We do not just build software; we
-              challenge convention, reimagine possibilities, and design with
-              purpose — turning visionary ideas into real, measurable impact.
-            </p>
-
-            <div className="flex flex-col sm:flex-row text-center justify-center gap-8 text-gray-600">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">2024</h3>
-                <p className="mt-2 text-sm">
-                  Founded as a boutique software firm.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">2025</h3>
-                <p className="mt-2 text-sm">
-                  Recognized as a leading digital innovator in enterprise and AI
-                  solutions.
-                </p>
-              </div>
+            {/* Text */}
+            <div className="space-y-5">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                Building the Future of African Innovation
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                <strong>QuantEdge Limited</strong> is a forward-focused technology firm dedicated
+                to delivering cutting-edge ERP systems and AI-powered solutions tailored to the
+                African enterprise landscape.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Founded by <strong>Samuel Ngige Mungai</strong> — a visionary software engineer and
+                entrepreneur — we blend creativity, strategy, and technology to transform bold ideas
+                into scalable digital ecosystems.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                At QuantEdge, we don’t just build software — we craft intelligent systems that drive
+                measurable impact, efficiency, and sustainable growth.
+              </p>
             </div>
           </div>
 
-          {/* Carousel */}
+          {/* OUR HISTORY — Modern Card-Style Timeline */}
+          <div className="mb-20 max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-gray-900">
+              Our Journey
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+              {/* Vertical gradient line */}
+              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-400 to-rose-400 transform -translate-x-1/2"></div>
+
+              {historyMilestones.map((milestone, index) => (
+                <div
+                  key={index}
+                  className={`relative flex flex-col items-center md:items-start ${
+                    index % 2 === 0
+                      ? "md:pl-12 md:text-left"
+                      : "md:pr-12 md:text-right"
+                  }`}
+                >
+                  {/* Circle icon */}
+                  <div className="absolute md:left-1/2 md:-translate-x-1/2 top-0 transform -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center border-4 border-blue-200 bg-white shadow-lg">
+                    {milestone.icon}
+                  </div>
+
+                  {/* Card */}
+                  <div className="mt-10 bg-white/80 backdrop-blur-lg border border-black/10 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 w-full">
+                    <p className="text-blue-600 font-semibold">{milestone.year}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {milestone.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CAROUSEL */}
           <Carousel
             className="w-full"
-            plugins={[plugin.current]}
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
+            plugins={[autoplay.current]}
+            onMouseEnter={() => autoplay.current.stop()}
+            onMouseLeave={() => autoplay.current.reset()}
           >
             <CarouselContent>
               {companyProfile.map((item, index) => (
                 <CarouselItem key={index}>
-                  <div
-                    key={index}
-                    className="bg-white/70 backdrop-blur-md border border-black/10
-                         rounded-3xl overflow-hidden transition-all duration-500"
-                  >
+                  <div className="bg-white/70 backdrop-blur-md border border-black/10 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2">
-                      {/* Image */}
                       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px]">
                         <Image
                           src={item.image}
@@ -113,8 +146,6 @@ export default function AboutSection() {
                           priority={index === 0}
                         />
                       </div>
-
-                      {/* Text */}
                       <div className="bg-white/80 backdrop-blur-lg p-8 md:p-12 flex flex-col justify-center">
                         <span className="text-blue-600 text-sm font-medium uppercase tracking-wider mb-4">
                           {item.category}
@@ -125,12 +156,7 @@ export default function AboutSection() {
                         <p className="text-gray-700 text-lg leading-relaxed mb-6">
                           {item.description}
                         </p>
-                        <Button
-                          className="text-blue-600 hover:text-blue-700 
-                               transition-all duration-300 
-                               p-3 w-12 h-12 rounded-full
-                               border border-blue-200 hover:bg-blue-50 hover:shadow-sm"
-                        >
+                        <Button className="text-blue-600 hover:text-blue-700 transition-all duration-300 p-3 w-12 h-12 rounded-full border border-blue-200 hover:bg-blue-50 hover:shadow-sm">
                           <FaChevronRight className="w-5 h-5" />
                         </Button>
                       </div>
@@ -140,156 +166,6 @@ export default function AboutSection() {
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200/50 to-transparent" />
-
-      {/* HOW WE WORK SECTION */}
-      <section
-        className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70
-                   dark:[color-scheme:light]
-                   px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16
-                   py-16 sm:py-20 md:py-24 text-neutral-900"
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div
-              className="inline-block px-4 py-2 sm:px-5 sm:py-2.5
-                         bg-gradient-to-r from-blue-100 to-rose-100 
-                         backdrop-blur-md border border-black/10
-                         rounded-full text-sm sm:text-base font-medium"
-            >
-              <span className="bg-gradient-to-r from-blue-600 to-rose-500 bg-clip-text text-transparent font-semibold">
-                Process
-              </span>
-            </div>
-
-            <h1 className="text-gray-900 text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
-              How we work
-            </h1>
-            <p className="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-              Our strategic approach to delivering exceptional technology
-              solutions
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="flex flex-col lg:flex-row gap-6">
-            {/* Left - Main Card */}
-            <div className="lg:w-1/2">
-              {workflowSteps[0] && (
-                <Card
-                  key={workflowSteps[0].title}
-                  className="bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/40 backdrop-blur-xl 
-                 border border-white/60 shadow-lg
-                 rounded-3xl overflow-hidden h-full flex flex-col
-                 justify-between transition-all duration-500 
-                 hover:shadow-2xl hover:shadow-blue-200/50 hover:-translate-y-2 hover:scale-[1.01]
-                 hover:border-blue-200/60 relative group"
-                >
-                  {/* Subtle gradient overlay on hover */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 
-                 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 
-                 transition-all duration-500 pointer-events-none rounded-3xl"
-                  />
-
-                  <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-between h-full relative z-10">
-                    <div>
-                      <span
-                        className="inline-block relative text-[0.7rem] sm:text-xs font-semibold uppercase tracking-wider
-             bg-white/10 backdrop-blur-md border border-white/20 text-blue-600
-             px-3 py-1.5 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)] overflow-hidden"
-                      >
-                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/20 to-purple-500/10 opacity-60" />
-                        <span className="relative z-10">
-                          {workflowSteps[0].step}
-                        </span>
-                      </span>
-
-                      <h3
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight 
-                     bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent"
-                      >
-                        {workflowSteps[0].title}
-                      </h3>
-
-                      <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
-                        {workflowSteps[0].description}
-                      </p>
-                    </div>
-
-                    <Button
-                      className="text-blue-600 hover:text-blue-700 transition-all duration-300 
-                     flex items-center gap-2 px-0 py-0 h-auto group/btn cursor-pointer bg-transparent border-0
-                     font-semibold text-base"
-                      variant="ghost"
-                    >
-                      <span>{workflowSteps[0].buttonLabel}</span>
-                      <FaChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </Card>
-              )}
-            </div>
-
-            {/* Right - Grid of 4 Smaller Cards */}
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {workflowSteps.slice(1).map((card, index) => (
-                <Card
-                  key={card.title}
-                  className="bg-gradient-to-br from-white/90 via-white/70 to-blue-50/30 backdrop-blur-xl 
-                 border border-white/60 shadow-md
-                 rounded-3xl overflow-hidden transition-all duration-500 
-                 hover:shadow-xl hover:shadow-blue-200/40 hover:-translate-y-2 hover:scale-[1.02]
-                 hover:border-blue-200/60 relative group"
-                >
-                  {/* Decorative corner accent */}
-                  <div
-                    className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-transparent 
-                 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-
-                  <div className="p-6 md:p-8 flex flex-col justify-between h-full relative z-10">
-                    <div>
-                      <span
-                        className="inline-block relative text-[0.7rem] sm:text-xs font-semibold uppercase tracking-wider
-             bg-white/10 backdrop-blur-md border border-white/20 text-blue-600
-             px-3 py-1.5 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)] overflow-hidden"
-                      >
-                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/20 to-purple-500/10 opacity-60" />
-                        <span className="relative z-10">{card.step}</span>
-                      </span>
-
-                      <h3
-                        className="text-xl sm:text-2xl font-bold mt-3 mb-3 leading-tight 
-                     bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent"
-                      >
-                        {card.title}
-                      </h3>
-
-                      <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                        {card.description}
-                      </p>
-                    </div>
-
-                    <Button
-                      className="text-blue-600 hover:text-blue-700 transition-all duration-300 
-                     flex items-center gap-2 px-0 py-0 h-auto group/btn cursor-pointer bg-transparent border-0
-                     font-semibold text-sm"
-                      variant="ghost"
-                    >
-                      <span>{card.buttonLabel}</span>
-                      <FaChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

@@ -170,16 +170,15 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            {/* Login Button */}
-            <Link href="/login" onClick={closeMobileMenu}>
+            {/* CTA Button */}
+            <Link href="/" onClick={closeMobileMenu}>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-[#34156e] to-[#340cac] rounded-lg 
-                   px-3 py-1.5 text-white sm:text-base md:text-lg lg:text-xl
-                   lg:px-4 lg:py-2 lg:text-[15px] 
+                className="hidden md:flex bg-gradient-to-r from-[#34156e] to-[#340cac] rounded-xl 
+                    px-5 py-5 text-center text-white sm:text-base md:text-lg
                    transition-colors whitespace-nowrap"
               >
-                Schedule Us
+                Schedule Meeting
               </Button>
             </Link>
 
@@ -269,7 +268,24 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+
+                 {/* CTA Button */}
+       <div className='mt-5 '>
+             <Link href="/" onClick={closeMobileMenu}>
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-[#34156e] to-[#340cac] rounded-2xl 
+                   px-5 py-5 text-center text-white sm:text-base
+                 
+                   transition-colors whitespace-nowrap"
+              >
+                Schedule Meeting
+              </Button>
+            </Link>
+       </div>
             </div>
+          
+          
           </div>
         </div>
       </div>

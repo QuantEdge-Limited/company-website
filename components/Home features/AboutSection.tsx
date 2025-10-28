@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import React, { useRef } from "react";
-import { FaBuilding, FaRocket, FaChevronRight } from "react-icons/fa6";
+import { FaBuilding, FaRocket } from "react-icons/fa6";
 import { companyProfile } from "@/constants";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Button } from "../ui/button";
 
 export default function AboutSection() {
   const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
@@ -30,7 +29,7 @@ export default function AboutSection() {
 
   return (
     <>
-      {/* ABOUT SECTION */}
+      {/* WHO WE ARE */}
       <section
         id="about"
         className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 flex flex-col justify-center text-neutral-900"
@@ -51,10 +50,48 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* WHO WE ARE — Two Column */}
+          {/* WHO WE ARE — Image Right */}
           <div className="mb-20 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* Text */}
+            <div className="relative space-y-6 md:space-y-8 px-2 sm:px-0 order-2 lg:order-1">
+              <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-rose-500 rounded-full mb-4"></div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                Building the{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-rose-500 bg-clip-text text-transparent">
+                  Future of African Innovation
+                </span>
+              </h2>
+
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                <strong className="text-gray-900">QuantEdge Limited</strong> is a
+                trailblazing technology company committed to reshaping how African
+                enterprises leverage{" "}
+                <span className="font-semibold text-blue-600">ERP systems</span> and{" "}
+                <span className="font-semibold text-rose-500">AI-driven intelligence</span>{" "}
+                to unlock sustainable growth, operational excellence, and competitive
+                advantage.
+              </p>
+
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                Founded by{" "}
+                <strong className="text-gray-900">Samuel Ngige Mungai</strong> — a visionary
+                software engineer and entrepreneur — QuantEdge thrives at the crossroads of{" "}
+                <span className="italic text-blue-700">creativity</span>,{" "}
+                <span className="italic text-rose-600">strategy</span>, and{" "}
+                <span className="italic text-blue-700">technology</span>, transforming
+                ambitious ideas into impactful digital ecosystems.
+              </p>
+
+              <div className="border-l-4 border-gradient-to-b from-blue-600 to-rose-500 pl-4 italic text-gray-800 text-lg leading-relaxed bg-white/60 backdrop-blur-sm rounded-md shadow-sm">
+                “At QuantEdge, we don’t just build software — we craft{" "}
+                <span className="text-blue-600 font-semibold">intelligent systems</span>{" "}
+                that power innovation, efficiency, and measurable impact.”
+              </div>
+            </div>
+
             {/* Image */}
-            <div className="relative h-80 sm:h-96 md:h-[450px] rounded-2xl overflow-hidden shadow-xl border border-black/10 transition-transform duration-500 hover:scale-105">
+            <div className="relative h-[500px] sm:h-[540px] md:h-[580px] rounded-2xl overflow-hidden shadow-xl border border-black/10 transition-transform duration-500 hover:scale-105 order-1 lg:order-2">
               <Image
                 src="/images/pexels-joshsorenson-1714208.jpg"
                 alt="QuantEdge team collaborating on cutting-edge technology"
@@ -63,69 +100,72 @@ export default function AboutSection() {
                 priority
               />
             </div>
-
-            {/* Text */}
-            <div className="space-y-5">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                Building the Future of African Innovation
-              </h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                <strong>QuantEdge Limited</strong> is a forward-focused technology firm dedicated
-                to delivering cutting-edge ERP systems and AI-powered solutions tailored to the
-                African enterprise landscape.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Founded by <strong>Samuel Ngige Mungai</strong> — a visionary software engineer and
-                entrepreneur — we blend creativity, strategy, and technology to transform bold ideas
-                into scalable digital ecosystems.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                At QuantEdge, we don’t just build software — we craft intelligent systems that drive
-                measurable impact, efficiency, and sustainable growth.
-              </p>
-            </div>
           </div>
+        </div>
+      </section>
 
-          {/* OUR HISTORY — Modern Card-Style Timeline */}
-          <div className="mb-20 max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-gray-900">
-              Our Journey
-            </h2>
+      {/* CURVED DIVIDER */}
+      <div className="w-full overflow-hidden bg-transparent">
+        <svg
+          viewBox="0 0 1440 150"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-24 text-blue-950"
+        >
+          <path
+            fill="currentColor"
+            d="M0,96L60,106.7C120,117,240,139,360,128C480,117,600,75,720,80C840,85,960,139,1080,138.7C1200,139,1320,85,1380,58.7L1440,32V0H0Z"
+          />
+        </svg>
+      </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* Vertical gradient line */}
-              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-400 to-rose-400 transform -translate-x-1/2"></div>
+      {/* OUR JOURNEY — distinct but harmonious background */}
+      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-rose-950 text-white py-24 px-6 sm:px-10 lg:px-20 transition-all duration-700">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-rose-400 tracking-wide">
+            Our Journey
+          </h2>
 
-              {historyMilestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col items-center md:items-start ${
-                    index % 2 === 0
-                      ? "md:pl-12 md:text-left"
-                      : "md:pr-12 md:text-right"
-                  }`}
-                >
-                  {/* Circle icon */}
-                  <div className="absolute md:left-1/2 md:-translate-x-1/2 top-0 transform -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center border-4 border-blue-200 bg-white shadow-lg">
-                    {milestone.icon}
-                  </div>
+          <p className="text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto mb-16 leading-relaxed">
+            From humble beginnings to regional recognition — our story is one of
+            innovation, resilience, and an unwavering commitment to transforming
+            Africa’s digital landscape.
+          </p>
 
-                  {/* Card */}
-                  <div className="mt-10 bg-white/80 backdrop-blur-lg border border-black/10 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 w-full">
-                    <p className="text-blue-600 font-semibold">{milestone.year}</p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </div>
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            {/* Connector Line */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-rose-400 to-blue-600 transform -translate-x-1/2 rounded-full"></div>
+
+            {historyMilestones.map((milestone, index) => (
+              <div
+                key={index}
+                className={`relative flex flex-col items-center md:items-start ${
+                  index % 2 === 0
+                    ? "md:pl-12 md:text-left"
+                    : "md:pr-12 md:text-right"
+                }`}
+              >
+                <div className="absolute md:left-1/2 md:-translate-x-1/2 top-0 transform -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center border-4 border-blue-950 bg-gradient-to-r from-blue-600 to-rose-500 text-white shadow-lg">
+                  {milestone.icon}
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* CAROUSEL */}
+                <div className="mt-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 w-full">
+                  <p className="text-rose-400 font-semibold">{milestone.year}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAROUSEL */}
+      <section className="bg-gradient-to-r from-white via-blue-50/40 to-rose-50/70">
+        <div className="max-w-7xl mx-auto py-20">
           <Carousel
             className="w-full"
             plugins={[autoplay.current]}
@@ -156,9 +196,6 @@ export default function AboutSection() {
                         <p className="text-gray-700 text-lg leading-relaxed mb-6">
                           {item.description}
                         </p>
-                        <Button className="text-blue-600 hover:text-blue-700 transition-all duration-300 p-3 w-12 h-12 rounded-full border border-blue-200 hover:bg-blue-50 hover:shadow-sm">
-                          <FaChevronRight className="w-5 h-5" />
-                        </Button>
                       </div>
                     </div>
                   </div>

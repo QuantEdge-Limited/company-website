@@ -1,22 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa6";
 
 export default function HeroSection() {
+
+  const [showArrow, setShowArrow] = useState(true);
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services");
     servicesSection?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
-    aboutSection?.scrollIntoView({ behavior: "smooth" });
+  const scrollToTeam = () => {
+    const teamSection = document.getElementById("team");
+    teamSection?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY < 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
       id="home"
-      className="relative w-full min-h-[92vh] max-sm:top-[72px] max-sm:mt-4 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-blue-50 to-white"
+      className="relative w-full min-h-[92vh] max-sm:top-[10px] max-sm:mt-4 flex flex-col-reverse max-md:gap-8 lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-blue-50 to-white"
     >
       {/* Left Side: Text Content */}
       <div className="w-full lg:w-1/2 text-left mb-10 lg:mb-0">
@@ -45,7 +58,7 @@ export default function HeroSection() {
           </Button>
 
           <Button
-            onClick={scrollToAbout}
+            onClick={scrollToTeam}
             variant="outline"
             className="w-full sm:w-auto border-[#34156e] text-[#34156e] hover:bg-[#f5f5f5] px-6 py-3 rounded-xl text-base font-medium transition-all duration-300 hover:shadow-md"
           >
@@ -85,6 +98,18 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      {/* Floating Scroll Indicator Arrow */}
+      {showArrow && (
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce opacity-80 shadow-xl bg-[#34156e]/70 p-2 rounded-full">
+          <FaChevronDown
+            size={24}
+            className="text-white dark:text-[#34156e]"
+            // onClick={() => {
+            //   document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+            // }}
+          />
+        </div>
+      )}
     </section>
   );
 }

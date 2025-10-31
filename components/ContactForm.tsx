@@ -251,7 +251,7 @@ export function ContactForm() {
             {/* Full width with responsive padding and text size */}
             <Button
               type="submit"
-              className="w-full h-11 sm:h-12 py-2 sm:py-3 bg-gradient-to-r from-[#34156e] to-[#340cac] text-white hover:from-[#2a1158] hover:to-[#2a0a8a] transition-all duration-200 text-sm sm:text-base font-medium flex items-center justify-center gap-2"
+              className="w-full h-11 sm:h-12 py-2 sm:py-3 bg-linear-to-r from-blue-600 via-teal-600  to-blue-600  text-white hover:from-blue-700 hover:via-teal-700  hover:to-blue-700 transition-all duration-200 text-sm sm:text-base font-medium flex items-center justify-center gap-2"
               disabled={isPending}
             >
               {isPending ? (

@@ -108,9 +108,9 @@ export const workflowSteps = [
 export const servicesOffered = [
   {
     category: "Software Development",
-    title: "Custom Software & Web Development",
+    title: "Custom Software Development",
     description:
-      "We design and build tailored software solutions — from web apps and mobile platforms to enterprise systems — that are scalable, secure, and built around your business goals. Our expertise spans UI/UX design, API integrations, and end-to-end development.",
+      "We design and build tailored software solutions from web apps and mobile platforms to enterprise systems; that are scalable, secure, and built around your business goals.",
     icon: Globe,
     buttonLabel: "Learn More",
     gradient: "from-[#9A4DFF] to-[#00C6FF]", // violet → bright blue
@@ -135,7 +135,7 @@ export const servicesOffered = [
   },
   {
     category: "Consulting",
-    title: "Digital Transformation & Consulting",
+    title: "Enterprise Innovation & Strategy",
     description:
       "We guide organizations through modernization — implementing ERP/CRM systems, workflow automation, and tech strategies that streamline operations and drive long-term success.",
     icon: ChartLine,
@@ -231,75 +231,74 @@ export const testimonials = [
 export const teamMembers = [
   // 🧭 Management
   {
-    name: "Samuel Ngige Mungai",
+    name: "Samuel",
     title: "Founder & Chief Executive Officer",
     department: "Management",
-    image: "/images/team/samuel.jpg",
+    image: "/team/sam.png",
     social: {
       twitter: "https://twitter.com/",
       linkedin: "https://linkedin.com/in/",
       github: "https://github.com/samuelnmu",
     },
     description:
-      "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of QUANTEDGE LIMITED, he leads the company’s mission to drive digital transformation across Africa. His passion lies in merging technology and strategy to create scalable, impactful business solutions.",
+      "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of QUANTEDGE LIMITED, he leads the company's mission to drive digital transformation across Africa.",
   },
 
   // 📋 Project Management
   {
-    name: "Linda Njeri",
-    title: "Product & Project Manager",
+    name: "Emanuel",
+    title: "Frontend Engineer",
     department: "Management",
-    image: "/images/team/linda.jpg",
+    image: "/team/emanuel.jpg",
     social: {
       linkedin: "https://linkedin.com/in/",
       github: "https://github.com/",
     },
     description:
-      "Linda bridges business goals and technical execution, ensuring projects are delivered efficiently and align with client objectives. She focuses on agile process improvement and team synergy.",
+      "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
   },
 
   // 💼 Sales & Partnerships
   {
-    name: "Caroline Mwangi",
-    title: "Head of Sales & Partnerships",
+    name: "Austine",
+    title: "Lead Backend Engineer",
     department: "Sales",
-    image: "/images/team/caroline.jpg",
+    image: "/team/fonker.jpg",
     social: {
-      linkedin: "https://linkedin.com/in/",
-      twitter: "https://twitter.com/",
+      github: "https://github.com/Emmauzishakes",
     },
     description:
-      "Caroline drives client acquisition and strategic partnerships, focusing on expanding the company’s reach across Africa’s growing digital economy. She combines data-driven sales strategies with strong relationship building.",
+      "A dedicated Backend Engineer with a strong focus on building reliable, scalable, and efficient server-side systems. Passionate about optimizing application performance, designing robust APIs, and ensuring seamless integration between services. Committed to delivering high-quality solutions through clean code, teamwork, and continuous learning.",
   },
 
   // 💻 Frontend Development
   {
-    name: "Peter Karanja",
+    name: "Peter",
     title: "Lead Frontend Engineer",
     department: "Development",
-    image: "/images/team/peter.jpg",
+    image: "/team/peter.jpg",
     social: {
       twitter: "https://twitter.com/",
       linkedin: "https://linkedin.com/in/",
       github: "https://github.com/peterkaranja",
     },
     description:
-      "Peter specializes in building responsive, high-performance web applications with a focus on user experience and design systems. He mentors junior developers and contributes to open-source projects.",
+      "Fronted in building responsive, high-performance web applications with a focus on user experience and design systems. He mentors junior developers and contributes to open-source projects.",
   },
 
   // ⚙️ Backend Development
   {
-    name: "Wilfred Kimani",
-    title: "Lead Backend Engineer",
+    name: "Wilfred ",
+    title: "Backend Engineer",
     department: "Development",
-    image: "/images/team/austine.jpg",
+    image: "/team/wilfred.jpg",
     social: {
       twitter: "https://twitter.com/",
       linkedin: "https://linkedin.com/in/",
       github: "https://github.com/austineoganga",
     },
     description:
-      "Austine architects and optimizes backend systems that power scalable and secure enterprise platforms. His expertise spans microservices, APIs, and cloud-native infrastructure.",
+      "A backend engineer with expertise in building scalable server-side applications, RESTful APIs, and database management. Passionate about optimizing performance and ensuring data security.",
   },
 
   // 🎨 Design & User Experience
@@ -319,15 +318,15 @@ export const teamMembers = [
 
   // ⚖️ Legal
   {
-    name: "David Otieno",
-    title: "Legal & Compliance Officer",
+    name: "Felix",
+    title: "Frontend Engineer",
     department: "Legal",
     image: "/images/team/david.jpg",
     social: {
       linkedin: "https://linkedin.com/in/",
     },
     description:
-      "David oversees all legal and compliance matters, ensuring QUANTEDGE LIMITED adheres to regulatory standards and intellectual property laws across regions of operation.",
+      "Another skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
   },
 ];
 

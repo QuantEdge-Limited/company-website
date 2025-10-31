@@ -1,32 +1,27 @@
 "use client";
 
 import CTASection from "@/components/CTASection";
-import AboutSection from "@/components/Home features/AboutSection";
+import CoreValuesSection from "@/components/Home features/CoreValuesSection";
+import CultureTeamSection from "@/components/Home features/CultureTeamSection";
 import HeroSection from "@/components/Home features/HeroSection";
+
+import VisionProblemSection from "@/components/Home features/VisionProblemSection";
+import ImpactTestimonialsSection from "@/components/Home features/ImpactTestimonialsSection";
 import ServicesSection from "@/components/Home features/ServicesSection";
-import TeamSection from "@/components/Home features/TeamSection";
-import TestimonialSection from "@/components/Home features/TestimonialSection";
 
 export default function Home() {
   return (
-    <>
-      {/* Hero */}
+    <main
+      className="bg-[#F9FAFB] text-[#1F2937]"
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
       <HeroSection />
-
-      {/* About */}
-      <AboutSection />
-
-      {/* Services */}
+      <VisionProblemSection />
+      {/* <CoreValuesSection /> */}
       <ServicesSection />
-
-      {/* Testimonials */}
-      <TestimonialSection />
-
-      {/* Team */}
-      <TeamSection />
-
-      {/* CTA */}
+      <ImpactTestimonialsSection />
+      <CultureTeamSection />
       <CTASection />
-    </>
+    </main>
   );
 }

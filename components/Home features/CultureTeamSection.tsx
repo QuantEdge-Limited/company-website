@@ -75,22 +75,36 @@ export default function CultureTeamSection() {
         </div>
 
         {/* Core Identity & Quote */}
-        <div className="grid lg:grid-cols-2 gap-4 mb-8 md:mb-10">
-          <div className="bg-linear-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100">
-            <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900">
-              Core Identity
-            </h3>
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
-              Founded by <strong>Samuel Ngige Mungai</strong>, a passionate
-              software engineer and visionary entrepreneur, QUANTEDGE stands at
-              the intersection of creativity and technology.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-              We believe in fostering an environment where innovation thrives,
-              respect is paramount, and excellence is the standard.
-            </p>
+        <div>
+          <div className="grid lg:grid-cols-2 gap-4 mb-8 md:mb-10">
+            <div className="bg-linear-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900">
+                Core Identity
+              </h3>
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
+                Founded in <strong>2025</strong> by{" "}
+                <strong>Samuel Ngige Mungai</strong>, a software
+                engineer and entrepreneur, <strong>QUANTEDGE</strong> was born
+                from a simple idea, that technology should empower, not
+                overwhelm. We bridge creativity and engineering to help African
+                businesses thrive in a rapidly evolving digital world.
+              </p>
+            </div>
+
+            <div className="bg-linear-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900">
+                Our Story
+              </h3>
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
+                From startups to enterprises, we partner with forward-thinking
+                leaders to craft transformative digital solutions that drive
+                growth, efficiency, and impact — shaping a smarter, more
+                connected future for Africa and beyond.
+              </p>
+            </div>
           </div>
 
+          {/* Quote */}
           <div className="bg-linear-to-br from-purple-50 to-white p-8 rounded-2xl border border-purple-100 flex items-center">
             <div className="relative">
               <svg
@@ -180,7 +194,6 @@ export default function CultureTeamSection() {
                       <AvatarImage
                         src={member.image}
                         alt={member.name}
-                        
                         className="w-full h-full"
                       />
                       <AvatarFallback className=" text-black font-semibold">

@@ -109,6 +109,7 @@ export const servicesOffered = [
   {
     category: "Software Development",
     title: "Custom Software Development",
+    href: "/services/software-development",
     description:
       "We design and build tailored software solutions from web apps and mobile platforms to enterprise systems; that are scalable, secure, and built around your business goals.",
     icon: Globe,
@@ -118,6 +119,7 @@ export const servicesOffered = [
   {
     category: "Infrastructure",
     title: "Cloud & IT Infrastructure Services",
+    href: "/services/infrastructure",
     description:
       "Empower your operations with robust cloud and IT infrastructure. We provide cloud migration, hosting, server management, and cybersecurity to ensure reliability, scalability, and data protection.",
     icon: Cloud,
@@ -127,6 +129,7 @@ export const servicesOffered = [
   {
     category: "Artificial Intelligence",
     title: "AI & Data Solutions",
+    href: "/services/artificial-intelligence",
     description:
       "Unlock the power of your data with AI-driven insights. From analytics dashboards to predictive modeling and automation tools, we help you turn data into smart business decisions.",
     icon: Brain,
@@ -136,6 +139,7 @@ export const servicesOffered = [
   {
     category: "Consulting",
     title: "Enterprise Innovation & Strategy",
+    href: "/services/consulting",
     description:
       "We guide organizations through modernization — implementing ERP/CRM systems, workflow automation, and tech strategies that streamline operations and drive long-term success.",
     icon: ChartLine,
@@ -145,6 +149,7 @@ export const servicesOffered = [
   {
     category: "Commerce",
     title: "E-commerce & FinTech Solutions",
+    href: "/services/commerce",
     description:
       "Develop secure, seamless, and scalable e-commerce and fintech platforms. From online stores to digital wallets and POS systems, we enable frictionless transactions and financial trust.",
     icon: ShoppingCart,
@@ -154,6 +159,7 @@ export const servicesOffered = [
   {
     category: "Mobile",
     title: "Mobile App Development",
+    href: "/services/mobile",
     description:
       "Build intuitive, high-performance mobile apps for Android, iOS, and cross-platform ecosystems — engineered for scalability, speed, and user engagement.",
     icon: Smartphone,
@@ -163,6 +169,7 @@ export const servicesOffered = [
   {
     category: "Security",
     title: "Cybersecurity & Data Protection",
+    href: "/services/security",
     description:
       "Safeguard your digital ecosystem with proactive security — including threat detection, vulnerability assessments, data recovery, and compliance-driven protection strategies.",
     icon: Shield,
@@ -172,6 +179,7 @@ export const servicesOffered = [
   {
     category: "Support",
     title: "IT Support & Managed Services",
+    href: "/services/support",
     description:
       "Keep your business running 24/7 with proactive system monitoring, expert troubleshooting, and fully managed IT services designed to maximize uptime and reliability.",
     icon: Headset,
@@ -246,13 +254,13 @@ export const teamMembers = [
 
   // 📋 Project Management
   {
-    name: "Emanuel",
+    name: "Emmanuel",
     title: "Frontend Engineer",
     department: "Management",
     image: "/team/emanuel.jpg",
     social: {
-      linkedin: "https://linkedin.com/in/",
-      github: "https://github.com/",
+      linkedin: "https://linkedin.com/in/emmanuel-mwangangi-040869368",
+      github: "https://github.com/Emmauzishakes",
     },
     description:
       "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",

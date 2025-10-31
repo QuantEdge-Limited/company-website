@@ -2,6 +2,7 @@ import { Card } from "../ui/card";
 import { servicesOffered } from "@/constants";
 import { Button } from "../ui/button";
 import { FaChevronRight } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function ServicesSection() {
   return (
@@ -73,6 +74,7 @@ export default function ServicesSection() {
                     </div>
 
                     {/* Button */}
+                    <Link href={service.href} >
                     <Button
                       className="text-blue-600 hover:text-blue-700 transition-all duration-300 
                  flex items-center px-0 py-0 h-auto group cursor-pointer"
@@ -81,6 +83,7 @@ export default function ServicesSection() {
                       <span>{service.buttonLabel}</span>
                       <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
+                    </Link>
                   </div>
                 </Card>
               );

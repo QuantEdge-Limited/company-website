@@ -254,17 +254,17 @@ export const teamMembers = [
       linkedin: "https://linkedin.com/in/",
       github: "https://github.com/",
     },
-    description: "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
+    description:
+      "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
   },
 
   // 💼 Sales & Partnerships
   {
-    name: "Emanuel",
+    name: "Austine",
     title: "Lead Backend Engineer",
     department: "Sales",
     image: "/team/fonker.jpg",
     social: {
-      
       github: "https://github.com/Emmauzishakes",
     },
     description:

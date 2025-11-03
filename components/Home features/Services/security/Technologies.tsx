@@ -1,14 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaCloud } from 'react-icons/fa6';
+import { SiBurpsuite, SiHashicorp, SiOwasp, SiSplunk } from 'react-icons/si';
 
 const techStack = [
-  { name: 'AWS Security Hub', logo: '☁️' },
-  { name: 'OWASP ZAP', logo: '🕷️' },
-  { name: 'Burp Suite', logo: '🕵️' },
+  { name: 'AWS Security Hub', logo: <FaCloud className='text-amber-500' /> },
+  { name: 'OWASP ZAP', logo: <SiOwasp /> },
+  { name: 'Burp Suite', logo: <SiBurpsuite className="text-orange-500" /> },
   { name: 'Wazuh', logo: '👁️' },
-  { name: 'HashiCorp Vault', logo: '🔒' },
-  { name: 'Splunk', logo: '📊' },
+  { name: 'HashiCorp Vault', logo: <SiHashicorp /> },
+  { name: 'Splunk', logo: <SiSplunk /> },
   { name: 'Nessus', logo: '🔍' },
   { name: 'CrowdStrike', logo: '🦅' },
 ];
@@ -29,7 +31,7 @@ export default function Technologies() {
               key={tech.name}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >

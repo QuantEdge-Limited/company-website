@@ -40,7 +40,7 @@ export default function OurProcess() {
               key={step.number}
               initial={{ x: index % 2 === 0 ? -300 : 300, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className={`flex items-center gap-8 ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
             >

@@ -1,27 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Bot, Brain, Workflow } from 'lucide-react';
+import { BiBarChartSquare } from 'react-icons/bi';
 
 const services = [
   {
     title: 'Custom AI & ML Models',
     description: 'Build predictive models for sales forecasting, churn prediction, fraud detection, and more trained on your data, deployed in your stack.',
-    icon: '🧠',
+    icon: <Brain size={30} className='text-purple-500' />,
   },
   {
     title: 'Real-Time Analytics Dashboards',
     description: 'Interactive, live dashboards that turn raw data into actionable insights with filtering, drill-downs, and alerts.',
-    icon: '📊',
+    icon: <BiBarChartSquare size={30} className='text-blue-500' />,
   },
   {
     title: 'Intelligent Automation',
     description: 'Automate workflows with RPA, NLP chatbots, document processing, and decision engines that learn and adapt.',
-    icon: '🤖',
+    icon: <Bot size={30} className='text-green-500' />,
   },
   {
     title: 'Data Engineering Pipelines',
     description: 'Robust ETL/ELT pipelines using modern tools to collect, clean, transform, and serve data at scale.',
-    icon: '⚙️',
+    icon: <Workflow size={30} className='text-yellow-500'/>,
   },
 ];
 
@@ -38,7 +40,7 @@ export default function WhatWeOffer() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

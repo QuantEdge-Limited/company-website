@@ -27,7 +27,7 @@ export default function OurCoverage() {
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm"
             >

@@ -1,26 +1,29 @@
 "use client";
 import { motion } from 'framer-motion';
+import { FiCpu, FiGlobe } from 'react-icons/fi';
+import { GiSmartphone } from 'react-icons/gi';
+import { LuNetwork } from 'react-icons/lu';
 
 const services = [
   {
     title: 'Web Application Development',
     description: 'From MVPs to enterprise-grade platforms, we build responsive, high-performance web apps using React, Next.js, Node.js, and modern frameworks.',
-    icon: '🌐',
+    icon: <FiGlobe className='text-blue-500' />,
   },
   {
     title: 'Mobile App Development',
     description: 'Native iOS & Android apps or cross-platform solutions with Flutter or React Native designed for speed, engagement, and scalability.',
-    icon: '📱',
+    icon: <GiSmartphone className='text-green-500' />,
   },
   {
     title: 'Enterprise System Integration',
     description: 'Connect legacy systems with modern cloud platforms using APIs, microservices, and event-driven architectures for seamless operations.',
-    icon: '🔗',
+    icon: <LuNetwork className='text-blue-500' />,
   },
   {
     title: 'API & Microservices Architecture',
     description: 'Design scalable, decoupled systems with RESTful, GraphQL, or gRPC APIs and microservices optimized for performance, security, and maintainability.',
-    icon: '⚡',
+    icon: <FiCpu className='text-yellow-500' />,
   },
 ];
 
@@ -37,7 +40,7 @@ export default function WhatWeOffer() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

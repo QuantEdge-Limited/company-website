@@ -1,27 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaApple } from 'react-icons/fa6';
+import { FcAndroidOs } from "react-icons/fc";
+import { FiLayers } from 'react-icons/fi';
+import { RiWifiOffLine } from 'react-icons/ri';
 
 const solutions = [
   {
     title: 'Native iOS Apps',
     description: 'High-performance apps built with Swift and SwiftUI — leveraging the full power of Apple’s ecosystem.',
-    icon: '📱',
+    icon: <FaApple size={40} className='text-gray-800' />,
   },
   {
     title: 'Native Android Apps',
     description: 'Fast, responsive apps using Kotlin and Jetpack Compose — optimized for all device sizes and OS versions.',
-    icon: '🤖',
+    icon: <FcAndroidOs size={40} />,
   },
   {
     title: 'Cross-Platform Apps',
     description: 'Single codebase for iOS & Android using React Native or Flutter — with near-native performance and faster time-to-market.',
-    icon: '🔄',
+    icon: <FiLayers size={40} className='text-sky-500' />,
   },
   {
     title: 'Offline-First & Real-Time Apps',
     description: 'Apps that work seamlessly offline and sync data in real-time — perfect for field service, healthcare, and logistics.',
-    icon: '🌐',
+    icon: <RiWifiOffLine size={40} className='text-blue-500' />,
   },
 ];
 
@@ -38,7 +42,7 @@ export default function WhatWeBuild() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

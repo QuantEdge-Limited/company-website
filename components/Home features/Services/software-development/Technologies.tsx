@@ -1,15 +1,20 @@
 "use client";
 import { motion } from 'framer-motion';
+import { FaAws, FaNode, FaPython, FaReact } from 'react-icons/fa6';
+import { RiNextjsFill } from 'react-icons/ri';
+import { SiMongodb, SiTypescript } from 'react-icons/si';
+import { BiLogoPostgresql } from 'react-icons/bi';
+
 
 const techStack = [
-  { name: 'React', logo: '⚛️' },
-  { name: 'Next.js', logo: '🚀' },
-  { name: 'Node.js', logo: '🟢' },
-  { name: 'TypeScript', logo: '🔵' },
-  { name: 'Python', logo: '🐍' },
-  { name: 'AWS', logo: '☁️' },
-  { name: 'PostgreSQL', logo: '🐘' },
-  { name: 'MongoDB', logo: '🍃' },
+  { name: 'React', logo: <FaReact className='text-cyan-500' /> },
+  { name: 'Next.js', logo: <RiNextjsFill /> },
+  { name: 'Node.js', logo: <FaNode className='text-green-500' /> },
+  { name: 'TypeScript', logo: <SiTypescript className='text-blue-500' /> },
+  { name: 'Python', logo: <FaPython className='text-cyan-700' /> },
+  { name: 'AWS', logo: <FaAws className='text-amber-500' /> },
+  { name: 'PostgreSQL', logo: <BiLogoPostgresql className='text-sky-500' /> },
+  { name: 'MongoDB', logo: <SiMongodb className='text-green-500' /> },
 ];
 
 export default function Technologies() {
@@ -28,7 +33,7 @@ export default function Technologies() {
               key={tech.name}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >

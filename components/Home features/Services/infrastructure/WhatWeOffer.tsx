@@ -1,27 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FiBarChart2, FiCloud, FiFileText, FiGitBranch } from 'react-icons/fi';
 
 const services = [
   {
     title: 'Cloud Migration & Modernization',
     description: 'Seamlessly migrate legacy systems to AWS, Azure, or GCP with zero downtime and optimized cost structures.',
-    icon: '☁️',
+    icon: <FiCloud className='text-blue-500' />,
   },
   {
     title: 'Infrastructure as Code (IaC)',
     description: 'Automate provisioning with Terraform, AWS CloudFormation, and CDK for consistent, version-controlled environments.',
-    icon: '📜',
+    icon: <FiFileText className='text-green-500' />,
   },
   {
     title: 'DevOps & CI/CD Pipelines',
     description: 'Build, test, and deploy faster with automated pipelines using GitHub Actions, AWS CodePipeline, or GitLab CI.',
-    icon: '⚡',
+    icon: <FiGitBranch className='text-yellow-500' />,
   },
   {
     title: 'Monitoring & Observability',
     description: 'Real-time insights with CloudWatch, Prometheus, Grafana, and ELK stack for proactive issue resolution.',
-    icon: '📊',
+    icon: <FiBarChart2 className='text-purple-500' />,
   },
 ];
 
@@ -38,7 +39,7 @@ export default function WhatWeOffer() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

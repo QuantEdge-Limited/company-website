@@ -17,8 +17,11 @@ export default function HeroSection() {
       {/* Background Image / Lighting Effect */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
+        // style={{
+        //   backgroundImage: `url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')`,
+        // }}
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')`,
+          backgroundImage: `url('/images/software-dev-hero-img.jpg')`,
         }}
       ></div>
 

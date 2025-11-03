@@ -1,27 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { MonitorSmartphone, RefreshCw } from 'lucide-react';
+import { GiShoppingCart } from 'react-icons/gi';
+import { HiMiniCreditCard } from 'react-icons/hi2';
 
 const solutions = [
   {
     title: 'Custom E-commerce Platforms',
     description: 'Headless or monolithic stores built with Shopify Plus, Magento, or custom React/Next.js frontends — optimized for speed and conversion.',
-    icon: '🛒',
+    icon: <GiShoppingCart size={35}/>,
   },
   {
     title: 'Digital Wallets & Payment Systems',
     description: 'Secure, PCI-compliant wallets, payment gateways, and transaction engines with multi-currency and fraud detection.',
-    icon: '💳',
+    icon: <HiMiniCreditCard size={35} className='text-amber-500' />,
   },
   {
     title: 'POS & Retail Systems',
     description: 'Unified online-offline experiences with cloud-connected point-of-sale systems for retail and hospitality.',
-    icon: '📱',
+    icon: <MonitorSmartphone size={35} />,
   },
   {
     title: 'Subscription & Billing Management',
     description: 'Automated recurring billing, dunning management, and revenue analytics for SaaS and membership businesses.',
-    icon: '🔁',
+    icon: <RefreshCw size={35} className='text-green-500' />,
   },
 ];
 
@@ -38,7 +41,7 @@ export default function WhatWeBuild() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

@@ -1,16 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaAws, FaDocker, FaLinux } from 'react-icons/fa6';
+import { SiAmazoncloudwatch, SiGithubactions, SiKubernetes, SiPrometheus, SiTerraform } from 'react-icons/si';
 
 const techStack = [
-  { name: 'AWS', logo: '☁️' },
-  { name: 'Terraform', logo: '🏗️' },
-  { name: 'Docker', logo: '🐳' },
-  { name: 'Kubernetes', logo: '☸️' },
-  { name: 'GitHub Actions', logo: '⚙️' },
-  { name: 'Prometheus', logo: '📈' },
-  { name: 'CloudWatch', logo: '👁️' },
-  { name: 'Linux', logo: '🐧' },
+  { name: 'AWS', logo: <FaAws /> },
+  { name: 'Terraform', logo: <SiTerraform /> },
+  { name: 'Docker', logo: <FaDocker /> },
+  { name: 'Kubernetes', logo: <SiKubernetes /> },
+  { name: 'GitHub Actions', logo: <SiGithubactions /> },
+  { name: 'Prometheus', logo: <SiPrometheus /> },
+  { name: 'CloudWatch', logo: <SiAmazoncloudwatch /> },
+  { name: 'Linux', logo: <FaLinux /> },
 ];
 
 export default function Technologies() {
@@ -29,7 +31,7 @@ export default function Technologies() {
               key={tech.name}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >

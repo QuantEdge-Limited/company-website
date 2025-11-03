@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Bot, RefreshCw } from 'lucide-react';
+import { GrBarChart } from 'react-icons/gr';
 
 const services = [
   {
@@ -11,17 +13,17 @@ const services = [
   {
     title: 'ERP & CRM Implementation',
     description: 'End-to-end deployment of SAP, Oracle, Salesforce, or Odoo systems configured to your workflows, not the other way around.',
-    icon: '🔄',
+    icon: <RefreshCw size={35} className='text-green-500' />,
   },
   {
     title: 'Workflow Automation',
     description: 'Identify bottlenecks and automate manual processes with RPA, low-code tools, or custom integrations.',
-    icon: '🤖',
+    icon: <Bot size={35} className='text-yellow-500' />,
   },
   {
     title: 'Tech Investment Prioritization',
     description: 'Cut through the noise with ROI-driven analysis to prioritize high-impact initiatives and avoid costly missteps.',
-    icon: '📊',
+    icon: <GrBarChart className='text-purple-500' />,
   },
 ];
 
@@ -38,7 +40,7 @@ export default function WhatWeOffer() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

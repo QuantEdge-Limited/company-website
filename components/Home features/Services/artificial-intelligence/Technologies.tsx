@@ -1,16 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaAws, FaPython } from 'react-icons/fa6';
+import { RiBarChart2Fill } from 'react-icons/ri';
+import { SiApachekafka, SiFoodpanda, SiPytorch, SiScikitlearn, SiTensorflow } from 'react-icons/si';
 
 const techStack = [
-  { name: 'Python', logo: '🐍' },
-  { name: 'TensorFlow', logo: '🔍' },
-  { name: 'PyTorch', logo: '🔥' },
-  { name: 'scikit-learn', logo: '🧪' },
-  { name: 'Pandas', logo: '🐼' },
-  { name: 'AWS SageMaker', logo: '☁️' },
-  { name: 'Apache Kafka', logo: '📡' },
-  { name: 'Power BI', logo: '📈' },
+  { name: 'Python', logo: <FaPython /> },
+  { name: 'TensorFlow', logo: <SiTensorflow /> },
+  { name: 'PyTorch', logo: <SiPytorch /> },
+  { name: 'scikit-learn', logo: <SiScikitlearn /> },
+  { name: 'Pandas', logo: <SiFoodpanda /> },
+  { name: 'AWS SageMaker', logo: <FaAws /> },
+  { name: 'Apache Kafka', logo: <SiApachekafka /> },
+  { name: 'Power BI', logo: <RiBarChart2Fill /> },
 ];
 
 export default function Technologies() {
@@ -29,7 +32,7 @@ export default function Technologies() {
               key={tech.name}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >

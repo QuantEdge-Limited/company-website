@@ -1,27 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaShieldAlt } from "react-icons/fa";
+import { HiDocumentCheck } from 'react-icons/hi2';
+import { PiSirenFill } from 'react-icons/pi';
+import { RiSearchEyeLine } from 'react-icons/ri';
 
 const services = [
   {
     title: 'Penetration Testing & Vulnerability Scanning',
     description: 'Identify and fix security gaps before attackers do — with manual and automated testing across web, mobile, and APIs.',
-    icon: '🔍',
+    icon: <RiSearchEyeLine className='text-red-500' />,
   },
   {
     title: 'Security Architecture & Zero Trust',
     description: 'Design secure-by-default systems using Zero Trust principles, least-privilege access, and micro-segmentation.',
-    icon: '🛡️',
+    icon: <FaShieldAlt className='text-blue-500' />,
   },
   {
     title: 'Incident Response & Forensics',
     description: '24/7 readiness with playbooks, containment strategies, and post-breach analysis to minimize damage and prevent recurrence.',
-    icon: '🚨',
+    icon: <PiSirenFill className='text-orange-500' />,
   },
   {
     title: 'Compliance & Audits',
     description: 'Achieve and maintain GDPR, ISO 27001, NIST, or PCI-DSS compliance with documentation, controls, and training.',
-    icon: '📜',
+    icon: <HiDocumentCheck className='text-green-500' />,
   },
 ];
 
@@ -38,7 +42,7 @@ export default function WhatWeOffer() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

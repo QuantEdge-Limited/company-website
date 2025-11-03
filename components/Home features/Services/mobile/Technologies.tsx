@@ -1,16 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SiAwsamplify, SiFirebase, SiGraphql, SiKotlin, SiRedux, SiSwift } from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
+import { FaFlutter } from "react-icons/fa6";
 
 const techStack = [
-  { name: 'Swift', logo: '🍎' },
-  { name: 'Kotlin', logo: '🤖' },
-  { name: 'React Native', logo: '⚛️' },
-  { name: 'Flutter', logo: '🎨' },
-  { name: 'Firebase', logo: '🔥' },
-  { name: 'GraphQL', logo: '📡' },
-  { name: 'AWS Amplify', logo: '☁️' },
-  { name: 'Redux', logo: '📦' },
+  { name: 'Swift', logo: <SiSwift className='text-orange-500' /> },
+  { name: 'Kotlin', logo: <SiKotlin className='text-purple-500' /> },
+  { name: 'React Native', logo: <TbBrandReactNative /> },
+  { name: 'Flutter', logo: <FaFlutter className='text-cyan-400' /> },
+  { name: 'Firebase', logo: <SiFirebase className='text-yellow-500' /> },
+  { name: 'GraphQL', logo: <SiGraphql className='text-pink-500' /> },
+  { name: 'AWS Amplify', logo: <SiAwsamplify className='text-purple-500' /> },
+  { name: 'Redux', logo: <SiRedux className='text-violet-400' /> },
 ];
 
 export default function Technologies() {
@@ -29,7 +32,7 @@ export default function Technologies() {
               key={tech.name}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >

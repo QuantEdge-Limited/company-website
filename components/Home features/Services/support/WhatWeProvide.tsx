@@ -1,27 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { MdVisibility } from "react-icons/md";
+import { BiSupport } from "react-icons/bi";
+import { RiShieldCheckFill } from "react-icons/ri";
+import { FaCloud } from 'react-icons/fa6';
 
 const services = [
   {
     title: '24/7 Proactive Monitoring',
     description: 'Real-time monitoring of servers, networks, and applications with instant alerts and automated remediation.',
-    icon: '👁️',
+    icon: <MdVisibility size={40} className="text-indigo-500" />,
   },
   {
     title: 'Help Desk & End-User Support',
     description: 'Friendly, expert support for your team — via phone, chat, or email — with SLA-backed response times.',
-    icon: '📞',
+    icon: <BiSupport size={40} className="text-blue-500" />,
   },
   {
     title: 'Backup & Disaster Recovery',
     description: 'Automated, encrypted backups with tested recovery plans to ensure business continuity after any incident.',
-    icon: '🛡️',
+    icon: <RiShieldCheckFill size={40} className="text-green-500" />,
   },
   {
     title: 'Managed Cloud & SaaS Services',
     description: 'We manage your AWS, Azure, Office 365, Google Workspace, and other cloud services for optimal performance and cost.',
-    icon: '☁️',
+    icon: <FaCloud size={40} className='text-sky-500' />,
   },
 ];
 
@@ -38,7 +42,7 @@ export default function WhatWeProvide() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >

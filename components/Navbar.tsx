@@ -41,17 +41,17 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#blogs", label: "Blogs" },
-    { href: "#portfolio", label: "Portfolio" },
-    { href: "#services", label: "Services", hasDropdown: true },
-    { href: "#contact", label: "Contact" },
+    { href: "/#home", label: "Home" },
+    { href: "/#about", label: "About" },
+    { href: "/#blogs", label: "Blogs" },
+    { href: "/#portfolio", label: "Portfolio" },
+    { href: "/#services", label: "Services", hasDropdown: true },
+    { href: "/#contact", label: "Contact" },
   ];
 
   const servicesList = servicesOffered.slice(0, 6).map((service) => ({
     label: service.title,
-    href: `#services`,
+    href: `/#services`,
   }));
   return (
     <>
@@ -82,9 +82,8 @@ export default function Navbar() {
                     >
                       {link.label}
                       <ChevronRight
-                        className={`w-4 h-4 transition-transform ${
-                          isServicesOpen ? "rotate-90" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-90" : ""
+                          }`}
                       />
                     </button>
 
@@ -106,26 +105,27 @@ export default function Navbar() {
                     )}
                   </div>
                 ) : (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium rounded-lg hover:bg-blue-50"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )
               )}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center gap-3">
-              <button
+              <Link
+                href="/schedule-consultation"
                 className="text-gray-700 px-6 py-2.5 rounded-full font-medium border border-gray-200 bg-white 
 hover:bg-linear-to-r hover:from-blue-600 hover:to-teal-500 hover:text-white hover:border-transparent cursor-pointer
 transition-all duration-300 ease-in-out"
               >
                 Schedule a Consultation
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -190,15 +190,14 @@ transition-all duration-300 ease-in-out"
                       >
                         {link.label}
                         <ChevronRight
-                          className={`w-4 h-4 transition-transform ${
-                            isServicesOpen ? "rotate-90" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-90" : ""
+                            }`}
                         />
                       </button>
                       {isServicesOpen && (
                         <div className="ml-4 space-y-1 border-l-2 border-blue-500 pl-4">
                           {servicesList.map((service) => (
-                            <a
+                            <Link
                               key={service.label}
                               href={service.href}
                               className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
@@ -208,27 +207,27 @@ transition-all duration-300 ease-in-out"
                               }}
                             >
                               {service.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       )}
                     </div>
                   ) : (
-                    <a
+                    <Link
                       key={link.label}
                       href={link.href}
                       className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-blue-50 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   )
                 )}
 
                 <div className="pt-4">
-                  <button className="w-full bg-linear-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all font-medium">
+                  <Link href="/schedule-consultation" className="block w-full bg-linear-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all font-medium text-center">
                     Schedule a Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

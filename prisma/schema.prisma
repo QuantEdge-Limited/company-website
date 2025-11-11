@@ -21,3 +21,17 @@ model Contact {
   message    String
   createdAt  DateTime @default(now())
 }
+
+model Consultation {
+  id                Int      @id @default(autoincrement())
+  firstName         String
+  lastName          String
+  email             String
+  phone             String
+  service           String
+  selectedDate      DateTime
+  selectedTime      String   // Format: "09:00" (24-hour)
+  additionalNotes   String?
+  googleMeetLink    String
+  createdAt         DateTime @default(now())
+}

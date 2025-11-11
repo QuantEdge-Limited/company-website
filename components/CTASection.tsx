@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ContactForm } from "./ContactForm";
 import { CheckCircle, Clock, Mail, MapPin, Phone } from "lucide-react";
 
@@ -155,9 +156,12 @@ export default function CTASection() {
                 for sustainable growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all font-semibold text-xs md:text-sm">
+                <Link
+                  href="/schedule-consultation"
+                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all font-semibold text-xs md:text-sm text-center"
+                >
                   Schedule a Consultation
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -7,7 +7,8 @@ export default function HeroSection() {
   return (
     <section className="relative bg-[#F9FAFB] overflow-hidden z-0">
       <div className="px-4 sm:px-8 lg:px-16 xl:px-24 w-full max-w-none py-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* ✅ Grid now side-by-side from md and up */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* --- Left Side: Text --- */}
           <div className="space-y-6 z-10 relative">
             <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full">
@@ -43,7 +44,7 @@ export default function HeroSection() {
           </div>
 
           {/* --- Right Side: Image --- */}
-          <div className="relative hidden lg:block w-full h-[480px]">
+          <div className="relative w-full h-[300px] sm:h-[380px] md:h-[420px] lg:h-[480px]">
             <Image
               src="/images/africa.png"
               alt="QUANTEDGE Innovation"

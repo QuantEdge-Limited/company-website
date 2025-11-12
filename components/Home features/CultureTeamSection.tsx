@@ -83,7 +83,7 @@ export default function CultureTeamSection() {
               </h3>
               <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
                 Founded in <strong>2025</strong> by{" "}
-                <strong>Samuel Ngige Mungai</strong>, a software
+                <strong>Samuel Mungai</strong>, a software
                 engineer and entrepreneur, <strong>QUANTEDGE</strong> was born
                 from a simple idea, that technology should empower, not
                 overwhelm. We bridge creativity and engineering to help African

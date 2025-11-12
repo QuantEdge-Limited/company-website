@@ -234,10 +234,10 @@ export const teamMembers = [
     name: "Samuel",
     title: "Founder & Chief Executive Officer",
     department: "Management",
-    image: "/team/sam.png",
+    image: "/team/samP.jpg",
     social: {
-      twitter: "https://twitter.com/",
-      linkedin: "https://linkedin.com/in/",
+      twitter: "https://twitter.com/fintechsam_254",
+      linkedin: "https://linkedin.com/in/samuel-mungai",
       github: "https://github.com/samuelnmu",
     },
     description:
@@ -295,7 +295,7 @@ export const teamMembers = [
     social: {
       twitter: "https://twitter.com/",
       linkedin: "https://linkedin.com/in/",
-      github: "https://github.com/austineoganga",
+      github: "https://github.com/",
     },
     description:
       "A backend engineer with expertise in building scalable server-side applications, RESTful APIs, and database management. Passionate about optimizing performance and ensuring data security.",
@@ -326,18 +326,18 @@ export const teamMembers = [
       linkedin: "https://linkedin.com/in/",
     },
     description:
-      "Another skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
+      "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
   },
 ];
 
 export const services = [
   "AI & Machine Learning",
+  "Custom Software",
   "Cloud Solutions",
   "Mobile Development",
   "Web Development",
   "Cybersecurity",
   "Data Analytics",
-  "Custom Software",
   "Consulting",
 ];
 

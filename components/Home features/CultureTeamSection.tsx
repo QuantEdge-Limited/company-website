@@ -98,7 +98,7 @@ export default function CultureTeamSection() {
               <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
                 From startups to enterprises, we partner with forward-thinking
                 leaders to craft transformative digital solutions that drive
-                growth, efficiency, and impact — shaping a smarter, more
+                growth, efficiency, and impact shaping a smarter, more
                 connected future for Africa and beyond.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function CultureTeamSection() {
               </svg>
               <p className="text-gray-700 italic text-sm md:text-base leading-relaxed pl-6">
                 "We do not just build software; we challenge convention,
-                reimagine possibilities, and design with purpose — turning
+                reimagine possibilities, and design with purpose turning
                 visionary ideas into real, measurable impact."
               </p>
             </div>

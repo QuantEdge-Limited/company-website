@@ -23,25 +23,25 @@ export const companyProfile = [
     category: "Digital",
     title: "Our Mission",
     description:
-      "We exist to ignite the digital revolution across Africa — empowering businesses, governments, and communities through intelligent, scalable, and transformative software solutions. Our mission is to build technology that not only solves today's challenges but also creates opportunities for generations to come.",
+      "We exist to ignite the digital revolution across Africa empowering businesses, governments, and communities through intelligent, scalable, and transformative software solutions. Our mission is to build technology that not only solves today's challenges but also creates opportunities for generations to come.",
     image: "/images/about/mission.jpg",
-    alt: "Our mission - Empowering Africa through digital innovation",
+    alt: "Our mission: Empowering Africa through digital innovation",
     buttonLabel: "Learn more",
   },
   {
     category: "Innovation",
     title: "Our Vision",
     description:
-      "To lead Africa into a bold new era of innovation — where technology amplifies human potential, redefines how industries operate, and transforms how communities connect, work, and thrive. We envision a continent powered by creativity, intelligence, and impact-driven technology.",
+      "To lead Africa into a bold new era of innovation where technology amplifies human potential, redefines how industries operate, and transforms how communities connect, work, and thrive. We envision a continent powered by creativity, intelligence, and impact-driven technology.",
     image: "/images/about/vision.jpg",
-    alt: "Our vision - Shaping the digital destiny of Africa",
+    alt: "Our vision: Shaping the digital destiny of Africa",
     buttonLabel: "Discover",
   },
   {
     category: "Teamwork",
     title: "Our Culture",
     description:
-      "Our culture is our strength — fueled by curiosity, driven by courage, and sustained by collaboration. We celebrate diversity, champion resilience, and design with empathy. Every idea, every line of code, and every project we deliver is guided by a shared purpose: to make technology more human, and humanity more empowered.",
+      "Our culture is our strength fueled by curiosity, driven by courage, and sustained by collaboration. We celebrate diversity, champion resilience, and design with empathy. Every idea, every line of code, and every project we deliver is guided by a shared purpose: to make technology more human, and humanity more empowered.",
     image: "/images/about/culture.jpg",
     alt: "Our culture - Collaboration, courage, and creativity in action",
     buttonLabel: "Explore",
@@ -50,7 +50,7 @@ export const companyProfile = [
     category: "Excellence",
     title: "Our Approach",
     description:
-      "We merge deep technical expertise with strategic insight and human-centered design — turning complexity into clarity and ambition into achievement. From concept to execution, our approach delivers measurable impact, driving growth and excellence at every touchpoint.",
+      "We merge deep technical expertise with strategic insight and human-centered design, turning complexity into clarity and ambition into achievement. From concept to execution, our approach delivers measurable impact, driving growth and excellence at every touchpoint.",
     image: "/images/about/approach.jpg",
     alt: "Our approach - Blending strategy, innovation, and excellence",
     buttonLabel: "Read more",
@@ -137,7 +137,7 @@ export const servicesOffered = [
     category: "Consulting",
     title: "Enterprise Innovation & Strategy",
     description:
-      "We guide organizations through modernization — implementing ERP/CRM systems, workflow automation, and tech strategies that streamline operations and drive long-term success.",
+      "We guide organizations through modernization implementing ERP/CRM systems, workflow automation, and tech strategies that streamline operations and drive long-term success.",
     icon: ChartLine,
     buttonLabel: "Learn",
     gradient: "from-[#00F5D4] to-[#4E65FF]", // mint → indigo-blue
@@ -155,7 +155,7 @@ export const servicesOffered = [
     category: "Mobile",
     title: "Mobile App Development",
     description:
-      "Build intuitive, high-performance mobile apps for Android, iOS, and cross-platform ecosystems — engineered for scalability, speed, and user engagement.",
+      "Build intuitive, high-performance mobile apps for Android, iOS, and cross-platform ecosystems  engineered for scalability, speed, and user engagement.",
     icon: Smartphone,
     buttonLabel: "Discover",
     gradient: "from-[#00F5D4] to-[#1B9AAA]", // mint → teal
@@ -164,7 +164,7 @@ export const servicesOffered = [
     category: "Security",
     title: "Cybersecurity & Data Protection",
     description:
-      "Safeguard your digital ecosystem with proactive security — including threat detection, vulnerability assessments, data recovery, and compliance-driven protection strategies.",
+      "Safeguard your digital ecosystem with proactive security  including threat detection, vulnerability assessments, data recovery, and compliance-driven protection strategies.",
     icon: Shield,
     buttonLabel: "Secure Now",
     gradient: "from-[#4E65FF] to-[#92EFFD]", // deep blue → light cyan
@@ -188,7 +188,7 @@ export const testimonials = [
       "Partnering with this team transformed our e-commerce platform. Their innovative solutions improved our checkout experience and increased conversions by 40%.",
     rating: 5,
     project: "E-commerce Platform Upgrade",
-    date: "2023-11-15",
+    date: "2025-11-15",
   },
   {
     name: "Daniel Otieno",
@@ -197,7 +197,7 @@ export const testimonials = [
       "Their engineering team delivered a secure and scalable API that powers thousands of daily transactions. We finally have the stability we needed.",
     rating: 4,
     project: "FinTech API Development",
-    date: "2024-01-20",
+    date: "2025-10-20",
   },
   {
     name: "Aisha Abdalla",
@@ -206,7 +206,7 @@ export const testimonials = [
       "The custom dashboard they built gives us real-time visibility across our supply chain. What used to take hours, now takes minutes.",
     rating: 5,
     project: "Logistics Dashboard",
-    date: "2024-03-05",
+    date: "2025-11-05",
   },
   {
     name: "Kevin Njoroge",
@@ -215,7 +215,7 @@ export const testimonials = [
       "With their support, we launched a telemedicine app that connects doctors and patients across Kenya. The response from users has been phenomenal.",
     rating: 5,
     project: "Telemedicine App",
-    date: "2024-05-10",
+    date: "2025-08-22",
   },
   {
     name: "Mercy Wanjiru",
@@ -224,7 +224,7 @@ export const testimonials = [
       "Their design and UX expertise made our learning platform more engaging for students. We've seen a 2x increase in daily active users.",
     rating: 4,
     project: "EdTech Learning Platform",
-    date: "2024-07-18",
+    date: "2025-09-18",
   },
 ];
 
@@ -244,21 +244,9 @@ export const teamMembers = [
       "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of QUANTEDGE LIMITED, he leads the company's mission to drive digital transformation across Africa.",
   },
 
-  // 📋 Project Management
-  {
-    name: "Emanuel",
-    title: "Frontend Engineer",
-    department: "Management",
-    image: "/team/emanuel.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/",
-      github: "https://github.com/",
-    },
-    description:
-      "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
-  },
+  
 
-  // 💼 Sales & Partnerships
+  //Team Leads
   {
     name: "Austine",
     title: "Lead Backend Engineer",
@@ -271,7 +259,6 @@ export const teamMembers = [
       "A dedicated Backend Engineer with a strong focus on building reliable, scalable, and efficient server-side systems. Passionate about optimizing application performance, designing robust APIs, and ensuring seamless integration between services. Committed to delivering high-quality solutions through clean code, teamwork, and continuous learning.",
   },
 
-  // 💻 Frontend Development
   {
     name: "Peter",
     title: "Lead Frontend Engineer",
@@ -286,48 +273,6 @@ export const teamMembers = [
       "Fronted in building responsive, high-performance web applications with a focus on user experience and design systems. He mentors junior developers and contributes to open-source projects.",
   },
 
-  // ⚙️ Backend Development
-  {
-    name: "Wilfred ",
-    title: "Backend Engineer",
-    department: "Development",
-    image: "/team/wilfred.jpg",
-    social: {
-      twitter: "https://twitter.com/",
-      linkedin: "https://linkedin.com/in/",
-      github: "https://github.com/",
-    },
-    description:
-      "A backend engineer with expertise in building scalable server-side applications, RESTful APIs, and database management. Passionate about optimizing performance and ensuring data security.",
-  },
-
-  // 🎨 Design & User Experience
-  // {
-  //   name: "Grace Achieng",
-  //   title: "Lead UI/UX Designer",
-  //   department: "Design",
-  //   image: "/images/team/grace.jpg",
-  //   social: {
-  //     linkedin: "https://linkedin.com/in/grace-achieng",
-  //     dribbble: "https://dribbble.com/graceachieng",
-  //     behance: "https://behance.net/graceachieng",
-  //   },
-  //   description:
-  //     "Grace leads the design team, crafting intuitive user experiences and visually compelling interfaces that align design aesthetics with business goals and technical requirements.",
-  // },
-
-  // ⚖️ Legal
-  {
-    name: "Felix",
-    title: "Frontend Engineer",
-    department: "Legal",
-    image: "/images/team/david.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/",
-    },
-    description:
-      "A skilled Frontend Engineer with a passion for creating seamless user experiences. Experienced in building responsive web applications using modern frameworks and technologies. Committed to delivering high-quality code and collaborating effectively with cross-functional teams.",
-  },
 ];
 
 export const services = [

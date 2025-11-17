@@ -13,7 +13,7 @@ export default function HeroSection() {
           <div className="space-y-6 z-10 relative">
             <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full">
               <span className="font-semibold text-sm">
-                Innovation at the Edge of Possibility
+                Innovation at the Edge of Possibility!
               </span>
             </div>
 
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
             <p className="text-sm md:text-base leading-relaxed text-gray-600 max-w-md">
               We build intelligent, scalable systems that turn vision into
-              reality — faster, smarter, and built to last.
+              reality faster, smarter, and built to last.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

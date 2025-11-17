@@ -75,7 +75,7 @@ export default function ImpactTestimonialsSection() {
               Why QUANTEDGE Matters
             </h2>
             <p className="text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              We're not just building software—we're building Africa's digital
+              We're not just building software, we're building Africa's digital
               future.
             </p>
           </div>

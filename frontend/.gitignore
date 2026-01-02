@@ -20,6 +20,8 @@
 # production
 /build
 
+gcloud.txt
+
 # misc
 .DS_Store
 *.pem

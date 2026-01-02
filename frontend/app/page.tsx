@@ -7,6 +7,7 @@ import FAQ from "@/components/frontpage/FAQ"
 import Contact from "@/components/frontpage/Contact"
 import VisionProblemSection from "@/components/frontpage/VisionProblemSection";
 
+
 export default function Home() {
   return (
     <>

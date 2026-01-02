@@ -45,8 +45,8 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600">
-            Frequently Asked Questions
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Frequently <span className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600">Asked Questions</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Quick answers to help you understand our process, services, and how we work.

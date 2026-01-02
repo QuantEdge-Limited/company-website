@@ -53,8 +53,8 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600 bg-clip-text">
-            Our Services
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 bg-clip-text">
+            Our <span className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600 bg-clip-text">Services</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Explore the wide range of technology solutions we engineer to drive growth and digital transformation.

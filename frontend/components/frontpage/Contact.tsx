@@ -36,11 +36,11 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600">
-            Connect With Our Team
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Connect With <span className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600">Our Team</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Whether you're exploring solutions, need support, or want to collaborate—our engineers and product team are ready to help.
+            Whether you're exploring solutions, need support, or want to collaborate. Our engineers and product team are ready to help.
           </p>
         </div>
 

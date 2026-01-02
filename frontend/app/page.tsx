@@ -1,17 +1,14 @@
 import Image from "next/image";
-import About from "@/components/About"
-import Header from "@/components/Header"
-import HeroSection from "@/components/HeroSection"
-import Reviews from "@/components/Reviews"
-import Services from "@/components/Services"
-import FAQ from "@/components/FAQ"
-import Contact from "@/components/Contact"
-import VisionProblemSection from "@/components/VisionProblemSection";
-import Footer from "@/components/Footer"
+import About from "@/components/frontpage/About"
+import HeroSection from "@/components/frontpage/HeroSection"
+import Reviews from "@/components/frontpage/Reviews"
+import Services from "@/components/frontpage/Services"
+import FAQ from "@/components/frontpage/FAQ"
+import Contact from "@/components/frontpage/Contact"
+import VisionProblemSection from "@/components/frontpage/VisionProblemSection";
 export default function Home() {
   return (
     <>
-    <Header/>
     <HeroSection/>
     <About/>
     <VisionProblemSection/>
@@ -19,7 +16,6 @@ export default function Home() {
     <FAQ/>
     <Reviews/>
     <Contact/>
-    <Footer/>
     </>
   );
 }

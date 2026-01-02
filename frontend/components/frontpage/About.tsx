@@ -32,9 +32,10 @@ export default function About() {
 
             {/* CEO ABOUT */}
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-cyan-600 mb-2">Meet Our CEO</h3>
-              <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-                Samuel Mungai is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of <span className="text-cyan-600 font-semibold">QuantEdge Limited</span>, he leads the company's mission to drive digital transformation across Africa.
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Our <span className="text-2xl font-bold text-cyan-600 mb-2">
+                CEO</span></h3>
+              <p className="text-gray-600 leading-relaxed text-base md:text-lg"> <span className="text-cyan-600 font-bold">Samuel Mungai </span>
+                is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of <span className="text-cyan-600 font-semibold">QUANTEDGE LIMITED</span>, he leads the company's mission to drive digital transformation across Africa.
               </p>
             </div>
           </motion.div>
@@ -49,13 +50,8 @@ export default function About() {
           >
             {/* LOGO */}
             <div className="flex items-center gap-4">
-              <img
-                src="/BGlogo.png"
-                alt="QuantEdge Logo"
-                className="w-16 h-16 object-contain"
-              />
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                About <span className="text-cyan-600">QuantEdge</span>
+                About <span className="text-cyan-600">QUANTEDGE</span>
               </h2>
             </div>
 
